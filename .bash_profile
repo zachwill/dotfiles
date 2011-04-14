@@ -4,7 +4,13 @@
 PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
 export PATH
 
+# Newer version of vim in MacVim distribution
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
+
+# Aliases to interact with GNU screen
+alias ss='screen -S'
+alias sr='screen -r'
+alias sx='screen -X'
 
 source ~/.git-completion.bash
 
@@ -19,5 +25,3 @@ function parse_git_branch {
 }
 
 export PS1='\u:\W $(__git_ps1 "(\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(parse_git_dirty)\[\e[0m\]) ")$ '
-
-# export PS1="\u in \W $ "
