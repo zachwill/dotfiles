@@ -7,6 +7,9 @@ export PATH
 # Newer version of vim in MacVim distribution
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
 
+# Keep from clobbering directories
+alias mkdir='mkdir -p'
+
 # Aliases to interact with GNU screen
 alias ss='screen -S'
 alias sr='screen -r'
