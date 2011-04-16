@@ -10,6 +10,9 @@ alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 # Keep from clobbering directories
 alias mkdir='mkdir -p'
 
+# Kill all jobs
+alias killjobs='kill -9 $(jobs -p)'
+
 # Aliases to interact with GNU screen
 alias ss='screen -S'
 alias sr='screen -r'
