@@ -16,7 +16,8 @@ alias killjobs='kill -9 $(jobs -p)'
 # Aliases to interact with GNU screen
 alias ss='screen -S'
 alias sr='screen -r'
-alias sx='screen -X'
+alias sx='screen -X -S'
+alias sls='screen -ls'
 
 source ~/.git-completion.bash
 
