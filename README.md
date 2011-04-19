@@ -1,12 +1,11 @@
 What Is This?
 -------------
 
-The `.bash_profile` I use on my Mac -- complete with a `git` prompt.
+The dotfiles (`.bash_profile`, `.vimrc.local`, `.screenrc`, etc.) I use on my
+Mac.
 
-I've added a few aliases for interacting with `GNU screen`, too.
 
-
-Picture Of It In Action
------------------------
+Picture Of Bash Prompt In Action
+--------------------------------
 
 ![My bash prompt](https://img.skitch.com/20110414-duxfx2dctty1schymgwcqy1cgc.png)
