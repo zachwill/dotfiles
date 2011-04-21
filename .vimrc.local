@@ -112,10 +112,6 @@ map <leader>t :CommandT<CR>
 " Ctrl-M to switch between 2 last buffers
 nmap <C-M> :b#<CR>
 
-" Leader + brackets for easy left/right switching between windows
-map <leader>] <C-w>l
-map <leader>[ <C-W>h
-
 " Show syntax highlighting groups for word under cursor
 " by hitting Ctrl+L -- think L for language
 nmap <C-L> :call <SID>SynStack()<CR>
@@ -171,8 +167,8 @@ ca sh Shell
 
 
 " Taken from Carl/Yehuda's Janus gvimrc file.
-" NERDTree updates to common commands -- cd, mkdir, etc.
-" Wanted it when working with vim in Terminal.
+" NERDTree updates to common bash commands -- cd, mkdir, etc.
+" Wanted it when working with vim in iTerm.
 
 " If the parameter is a directory, cd into it
 function s:CdIfDirectory(directory)
