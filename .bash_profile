@@ -7,6 +7,9 @@ export PATH
 # Newer version of vim in MacVim distribution
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
 
+# Vi editing mode for bash.
+set -o vi
+
 # Keep from clobbering directories
 alias mkdir='mkdir -p'
 
@@ -19,6 +22,8 @@ alias sr='screen -r'
 alias sx='screen -X -S'
 alias sls='screen -ls'
 
+
+# The following is for a green git prompt of the current branch.
 source ~/.git-completion.bash
 
 function parse_git_dirty {
