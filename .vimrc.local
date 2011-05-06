@@ -53,12 +53,15 @@ au FileType python call s:pythonWrapping()
 
 au BufRead,BufNewFile *.py syn match print /print\s/
 
-" Set new HTML files to 'htmldjango.html' filetype.
+" Set new Django HTML files to 'htmldjango.html' filetype.
 " Allows template syntax + Sparkup plugin functionality.
-au! BufRead,BufNewFile *.html setf htmldjango.html
+au! FileType htmldjango set ft=htmldjango.html
 
 " Set .less files to CSS syntax
 au BufRead,BufNewFile *.less setf css
+
+" No need for lh usemarks in JavaScript/Markdown files
+au BufRead,BufNewFile *.js,*.md let b:usemarks=0
 
 function! Python_Eval_VSplit() range
   let src = tempname()
@@ -100,6 +103,7 @@ imap <C-I> <ESC><S-I>
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.py[c|o]$']
 map <C-P> :NERDTreeToggle<CR>
+
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
