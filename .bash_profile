@@ -13,6 +13,9 @@ set -o vi
 # Keep from clobbering directories
 alias mkdir='mkdir -p'
 
+# Who doesn't love tree's colored output?
+alias tree='tree -C'
+
 # Kill all jobs
 alias killjobs='kill -9 $(jobs -p)'
 
