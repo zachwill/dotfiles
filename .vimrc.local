@@ -73,8 +73,10 @@ endfunction
 au BufRead,BufNewFile *.py vmap <silent> <F7> :call Python_Eval_VSplit()<CR>
 au BufRead,BufNewFile *.py nmap <silent> <F7> mzggVG<F7>`z
 
-" ,r to execute current python script -- alternative version
+" ,r to execute current Python or Ruby script
 au BufRead,BufNewFile *.py nmap <leader>r :w<Esc>:!python %<cr>
+au BufRead,BufNewFile *.py nmap <leader>p :w<Esc>:!pypy %<cr>
+au BufRead,BufNewFile *.rb nmap <leader>r :w<Esc>:!ruby %<cr>
 
 " :Q! force quits now
 command! -bar -bang Q quit<bang>
@@ -82,17 +84,21 @@ command! -bar -bang Q quit<bang>
 " :W writes, too
 command! W :w
 
+" Alt-. to repeat but cursor remain where it was before the command.
+nmap <A-.> .`[
+
+" Ctrl-Y to paste word above cursor.
+noremap! <C-Y> <Esc>klyWjpa
+
 " Ctrl+A to end of line in insert mode
 imap <C-A> <C-O>$
-
 " Ctrl+E to end of word in insert mode
 imap <C-E> <ESC>ea
-
 " Ctrl+I to beginning of line in insert mode
 imap <C-I> <ESC><S-I>
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$']
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.py[c|o]$']
 map <C-P> :NERDTreeToggle<CR>
 
 " Inserts the path of the currently edited file into a command
