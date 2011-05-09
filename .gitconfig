@@ -1,0 +1,39 @@
+[user]
+  name = Zach Williams
+  email = hey@zachwill.com
+[core]
+  editor = vim
+  excludesfile = /Users/zachwill/.gitignore_global
+  quotepath = false
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[alias]
+  st = status
+  sb = status -sb
+  aa = add -A
+  br = branch
+  ci = commit
+  co = checkout
+  df = diff
+  dc = diff --cached
+  last = log -1 HEAD
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  tree = log --abbrev-commit --graph --pretty=oneline --decorate
+[github]
+  user = zachwill
+  token = youdon'tkneedtoknowthis

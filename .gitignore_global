@@ -1,0 +1,5 @@
+*.pyc
+*.pyo
+.coverage
+*.rbc
+.DS_Store
