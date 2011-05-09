@@ -108,6 +108,8 @@ map <C-P> :NERDTreeToggle<CR>
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+" Map ,cd to cd to current directory
+map <leader>cd :ChangeDirectory %:p:h<CR>:pwd<CR>
 
 " Ctrl-N to disable search match highlight
 nmap <silent> <C-N> :silent noh<CR>
