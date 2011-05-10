@@ -46,6 +46,9 @@ command! -bar -bang Q quit<bang>
 " :W writes, too
 command! W :w
 
+" gm to go to the middle of a line
+map gm :call cursor(0, virtcol('$')/2)<CR>
+
 " Alt-. to repeat but cursor remain where it was before the command.
 nmap <A-.> .`[
 
@@ -58,6 +61,16 @@ imap <C-A> <C-O>$
 imap <C-E> <ESC>ea
 " Ctrl+I to beginning of line in insert mode
 imap <C-I> <ESC><S-I>
+
+" Ctrl-N to disable search match highlight
+nmap <silent> <C-N> :silent noh<CR>
+
+" Ctrl-M to switch between 2 last buffers
+nmap <C-M> :b#<CR>
+
+" Easy window width resizing with +/_ keys
+nmap + <C-W>>
+nmap _ <C-W><
 
 " Python Auto Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -97,25 +110,15 @@ au BufRead,BufNewFile *.py nmap <leader>8 :w<Esc>:!pep8 %<cr>
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.py[c|o]$']
 map <C-P> :NERDTreeToggle<CR>
 
-
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
 " Map ,cd to cd to current directory
 map <leader>cd :ChangeDirectory %:p:h<CR>:pwd<CR>
 
-" Ctrl-N to disable search match highlight
-nmap <silent> <C-N> :silent noh<CR>
-
-" Easy window width resizing with +/_ keys
-nmap + <C-W>>
-nmap _ <C-W><
-
 " CommandT functionality with ,t
 map <leader>t :CommandT<CR>
-
-" Ctrl-M to switch between 2 last buffers
-nmap <C-M> :b#<CR>
 
 " Show syntax highlighting groups for word under cursor
 " by hitting Ctrl+L -- think L for language
@@ -130,8 +133,6 @@ endfunc
 " ,/ to invert comment on the current line/selection
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
 vmap <leader>/ :call NERDComment(0, "invert")<cr>
-
-map gm :call cursor(0, virtcol('$')/2)<CR>
 
 " Split current buffers into tabs
 " command <leader>bt :bufdo tab split<CR>
@@ -148,6 +149,7 @@ let g:miniBufExplUseSingleClick = 1
 
 " ,b to display current buffers list
 nmap <Leader>b :MiniBufExplorer<cr>
+
 
 " For more info: http://goo.gl/PD4Tv
 " Execute shell command into new scratch buffer.
