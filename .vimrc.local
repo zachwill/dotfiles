@@ -81,8 +81,8 @@ function s:pythonWrapping()
     set softtabstop=4
 endfunction
 
-" Python files need 4 spaces
-au FileType python call s:pythonWrapping()
+" Python, C, and C++ files need 4 spaces
+au FileType python,c,cpp call s:pythonWrapping()
 
 au BufRead,BufNewFile *.py syn match print /print\s/
 
