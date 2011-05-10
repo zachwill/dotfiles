@@ -25,6 +25,9 @@ alias sr='screen -r'
 alias sx='screen -X -S'
 alias sls='screen -ls'
 
+# Use GCC to compile C++ files.
+alias gccp='gcc -lstdc++'
+
 
 # The following is for a green git prompt of the current branch.
 source ~/.git-completion.bash
