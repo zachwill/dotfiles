@@ -30,7 +30,7 @@ alias gccp='gcc -lstdc++'
 
 
 # The following is for a green git prompt of the current branch.
-source ~/.git-completion.bash
+source ~/.git_completion.sh
 
 function parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working
