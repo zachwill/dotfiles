@@ -1,7 +1,7 @@
 
 # Setting PATH for MacPython 2.6
 # The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:/Users/zachwill/go/bin:${PATH}"
 export PATH
 
 # Newer version of vim in MacVim distribution
@@ -28,6 +28,10 @@ alias sls='screen -ls'
 # Use GCC to compile C++ files.
 alias gccp='gcc -lstdc++'
 
+# Growl command for iTerm2 -- useful for notifications.
+# Usage:
+#     run long_process; growl "long_process complete"
+growl() { echo -e $'\e]9;'${1}'\007'; return ; }
 
 # The following is for a green git prompt of the current branch.
 source ~/.git_completion.sh
