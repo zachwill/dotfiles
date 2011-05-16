@@ -4,6 +4,9 @@
 PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:/Users/zachwill/go/bin:${PATH}"
 export PATH
 
+#vi should point to vim
+alias vi='vim'
+
 # Newer version of vim in MacVim distribution
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
 
@@ -31,7 +34,7 @@ alias gccp='gcc -lstdc++'
 # Growl command for iTerm2 -- useful for notifications.
 # Usage:
 #     run long_process; growl "long_process complete"
-growl() { echo -e $'\e]9;'${1}'\007'; return ; }
+growl() { echo -e $'\e]9;'${@}'\007'; return ; }
 
 # The following is for a green git prompt of the current branch.
 source ~/.git_completion.sh
