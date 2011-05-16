@@ -81,8 +81,8 @@ function s:pythonWrapping()
     set softtabstop=4
 endfunction
 
-" Python, C, and C++ files need 4 spaces
-au FileType python,c,cpp call s:pythonWrapping()
+" Python and C files need 4 spaces
+au FileType python,c call s:pythonWrapping()
 
 au BufRead,BufNewFile *.py syn match print /print\s/
 
@@ -111,14 +111,16 @@ let NERDTreeIgnore=['\.rbc$', '\~$', '\.py[c|o]$']
 map <C-P> :NERDTreeToggle<CR>
 
 " Inserts the path of the currently edited file into a command
-" Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+" Command mode: Ctrl+P or %%
+cmap <C-P> <C-R>=expand("%:p:h") . "/"<CR>
+cnoremap %% <C-R>=expand("%:p:h") . "/"<CR>
 
 " Map ,cd to cd to current directory
 map <leader>cd :ChangeDirectory %:p:h<CR>:pwd<CR>
 
-" CommandT functionality with ,t
+" CommandT functionality with ,t or ,f
 map <leader>t :CommandT<CR>
+map <leader>f :CommandT<CR>
 
 " Show syntax highlighting groups for word under cursor
 " by hitting Ctrl+L -- think L for language
