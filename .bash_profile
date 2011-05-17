@@ -1,6 +1,6 @@
 # Setting PATH for MacPython 2.6
 # The orginal version is saved in .bash_profile.pysave
-PATH="/Users/zachwill/go/bin:${PATH}"
+PATH="$HOME/go/bin:${PATH}"
 PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
 export PATH
 
@@ -9,6 +9,9 @@ set -o vi
 
 # Set default editor to vim.
 export EDITOR=vim
+
+# Python file for interactive console
+export PYTHONSTARTUP=$(echo $HOME)/.pythonrc.py
 
 # Source .aliases.sh file
 if [ -f ~/.aliases.sh ]; then
