@@ -11,18 +11,17 @@ RED='\033[31m'
 BLUE='\033[34m'
 NC='\033[0m' # No Color
 
-# Output...
-DONE="${GREEN}Done${NC}"
-NOT_LINK="${RED}File not linked${NC}"
 
-link_file() { ln -s $PWD/$file $HOME/$file ; return ; }
+link_file() {
+  ln -s $PWD/$file $HOME/$file && echo -e "${GREEN}Linked ~/$file ${NC}" ;
+}
 
-rm_and_link() { rm $HOME/$file && link_file ; return ; }
+rm_and_link() { rm $HOME/$file && link_file ; }
 
 prompt_deletion() {
   read -n1 -p "Delete ~/$file and link new one? (y/n) " ;
   printf "\n" ;  # Blank newline
-  [[ $REPLY == [yY] ]] && rm_and_link && echo -e $DONE || echo -e $NOT_LINK ;
+  [[ $REPLY == [yY] ]] && rm_and_link || echo -e "${RED}File not linked.${NC}";
 }
 
 for file in $(ls -a | grep ^\\.[a-z] | grep -v .git$)
