@@ -171,8 +171,6 @@ function! s:ExecuteInShell(command)
 endfunction
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 ca shell Shell
-ca sh Shell
-
 
 
 " Taken from Carl/Yehuda's Janus gvimrc file.
