@@ -1,43 +1,29 @@
-
 # Setting PATH for MacPython 2.6
 # The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:/Users/zachwill/go/bin:${PATH}"
+PATH="/Users/zachwill/go/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
 export PATH
-
-#vi should point to vim
-alias vi='vim'
-
-# Newer version of vim in MacVim distribution
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
 
 # Vi editing mode for bash.
 set -o vi
 
-# Keep from clobbering directories
-alias mkdir='mkdir -p'
+# Set default editor to vim.
+export EDITOR=vim
 
-# Who doesn't love tree's colored output?
-alias tree='tree -C'
-
-# Kill all jobs
-alias killjobs='kill -9 $(jobs -p)'
-
-# Aliases to interact with GNU screen
-alias ss='screen -S'
-alias sr='screen -r'
-alias sx='screen -X -S'
-alias sls='screen -ls'
-
-# Use GCC to compile C++ files.
-alias gccp='gcc -lstdc++'
+# Source .aliases.sh file
+if [ -f ~/.aliases.sh ]; then
+  source ~/.aliases.sh
+fi
 
 # Growl command for iTerm2 -- useful for notifications.
 # Usage:
-#     run long_process; growl "long_process complete"
+#   long_process && growl "long_process complete"
 growl() { echo -e $'\e]9;'${@}'\007'; return ; }
 
 # The following is for a green git prompt of the current branch.
-source ~/.git_completion.sh
+if [ -f ~/.git_completion.sh ]; then
+  source ~/.git_completion.sh
+fi
 
 function parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working
