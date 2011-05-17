@@ -1,2 +1,7 @@
 # Get rid of annoying startup message.
 startup_message off
+
+term xterm-color
+
+# Have screen read .bash_profile and .bashrc
+defshell -bash
