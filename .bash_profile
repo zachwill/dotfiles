@@ -18,6 +18,8 @@ if [ -f ~/.aliases.sh ]; then
   source ~/.aliases.sh
 fi
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
 # Growl command for iTerm2 -- useful for notifications.
 # Usage:
 #   long_process && growl "long_process complete"
