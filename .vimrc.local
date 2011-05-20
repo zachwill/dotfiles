@@ -96,13 +96,17 @@ au BufRead,BufNewFile *.less setf css
 " No need for lh usemarks with delimitMate
 au BufRead,BufNewFile * let b:usemarks=0
 
-" ,r to execute current Python or Ruby script
-au BufRead,BufNewFile *.py nmap <leader>r :w<Esc>:!python %<cr>
-au BufRead,BufNewFile *.rb nmap <leader>r :w<Esc>:!ruby %<cr>
+" ,r - Execute the current buffer with the current filetype
+function! RunCommand()
+  let lang = &ft
+  exe "map <leader>r :w<CR>:!". lang . " %<CR>"
+endfunction
+
+" ,r to execute current buffer
+au BufRead,BufNewFile * call RunCommand()
 
 " ,p to execute Python script with pypy
 au BufRead,BufNewFile *.py nmap <leader>p :w<Esc>:!pypy %<cr>
-
 " ,8 to check Python file follows PEP 8 Style Guide
 au BufRead,BufNewFile *.py nmap <leader>8 :w<Esc>:!pep8 %<cr>
 
@@ -171,6 +175,7 @@ function! s:ExecuteInShell(command)
 endfunction
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 ca shell Shell
+
 
 
 " Taken from Carl/Yehuda's Janus gvimrc file.
