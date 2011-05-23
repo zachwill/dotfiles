@@ -1,3 +1,6 @@
+# Add Go to PATH
+PATH="/Library/go/bin:${PATH}"
+
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
@@ -10,14 +13,13 @@ set -o vi
 export EDITOR=vim
 
 # Python file for interactive console
-export PYTHONSTARTUP=$(echo $HOME)/.pythonrc.py
+export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 # Source .aliases.sh file
-if [ -f ~/.aliases.sh ]; then
-  source ~/.aliases.sh
-fi
+[[ -s "$HOME/.aliases.sh" ]] && . "$HOME/.aliases.sh"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+# Load RVM function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Growl command for iTerm2 -- useful for notifications.
 # Usage:
