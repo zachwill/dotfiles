@@ -1,7 +1,6 @@
-# Setting PATH for MacPython 2.6
+# Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
-PATH="$HOME/go/bin:${PATH}"
-PATH="/Library/Frameworks/Python.framework/Versions/2.6/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
 
 # Vi editing mode for bash.
