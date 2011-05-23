@@ -6,6 +6,9 @@ alias vi='vim'
 # Newer version of vim in MacVim distribution
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
 
+# Alias for Tcl shell-like interpreter
+alias tcl='tclsh'
+
 # Keep from clobbering directories
 alias mkdir='mkdir -p'
 
