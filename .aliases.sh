@@ -9,6 +9,11 @@ alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 # Alias for Tcl shell-like interpreter
 alias tcl='tclsh'
 
+# Redis server
+alias redis_server="$HOME/Library/redis/src/redis-server"
+# Redis client
+alias redis="$HOME/Library/redis/src/redis-cli"
+
 # Keep from clobbering directories
 alias mkdir='mkdir -p'
 
