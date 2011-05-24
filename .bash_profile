@@ -1,6 +1,9 @@
 # Add Go to PATH
 PATH="/Library/go/bin:${PATH}"
 
+# Add node.js to PATH
+PATH="$HOME/.node/bin:${PATH}"
+
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
