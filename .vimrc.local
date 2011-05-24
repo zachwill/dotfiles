@@ -72,6 +72,9 @@ nmap <C-M> :b#<CR>
 nmap + <C-W>>
 nmap _ <C-W><
 
+" Proper indentation of braces for C-like languages
+au FileType c,cpp,javascript,java imap { {}<left><cr><cr><up><tab>
+
 " Python Auto Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
@@ -99,6 +102,9 @@ au BufRead,BufNewFile * let b:usemarks=0
 " ,r - Execute the current buffer with the current filetype
 function! RunCommand()
   let lang = &ft
+  if lang == 'javascript'
+    let lang = 'node'
+  endif
   exe "map <leader>r :w<CR>:!". lang . " %<CR>"
 endfunction
 
