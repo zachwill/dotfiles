@@ -2,7 +2,10 @@
 PATH="/Library/go/bin:${PATH}"
 
 # Add node.js to PATH
-PATH="$HOME/.node/bin:${PATH}"
+PATH="$PATH:$HOME/.node/bin"
+
+# Add Scala to PATH
+PATH="$PATH:$HOME/Library/scala/bin"
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
@@ -44,4 +47,5 @@ function parse_git_branch {
   \(.*\)/[\1$(parse_git_dirty)]/"
 }
 
-export PS1='\u:\W $(__git_ps1 "(\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(parse_git_dirty)\[\e[0m\]) ")$ '
+# Cool characters: ✩ ✪ ⚡
+export PS1='\u:\W $(__git_ps1 "(\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(parse_git_dirty)\[\e[0m\]) ")✩  '
