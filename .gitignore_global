@@ -1,5 +1,23 @@
-*.pyc
-*.pyo
-.coverage
+*.py[co]
 *.rbc
 .DS_Store
+
+# Python Packages
+*.egg
+*.egg-info
+build
+dist
+sdist
+eggs
+parts
+bin
+var
+develop-eggs
+.installed.cfg
+
+# Pip Installer Log
+pip-log.txt
+
+# Unit test / coverage
+.coverage
+.tox
