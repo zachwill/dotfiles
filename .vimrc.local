@@ -104,6 +104,8 @@ function! RunCommand()
   let lang = &ft
   if lang == 'javascript'
     let lang = 'node'
+  elseif lang == 'c'
+    let lang = 'gcc'
   endif
   exe "map <leader>r :w<CR>:!". lang . " %<CR>"
 endfunction
@@ -119,6 +121,9 @@ au BufRead,BufNewFile *.py nmap <leader>8 :w<Esc>:!pep8 %<cr>
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.py[c|o]$']
 map <C-P> :NERDTreeToggle<CR>
+
+" Shortcut for Align plugin
+vmap <C-A> :Align
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P or %%
