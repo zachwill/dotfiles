@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Use .json_tool.py to print JSON input
+alias json='python ~/.json_tool.py'
+
+# Reload ~/.bash_profile
+alias reload='source ~/.bash_profile'
+
 #vi should point to vim
 alias vi='vim'
 
