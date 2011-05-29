@@ -98,9 +98,6 @@ au! FileType htmldjango set ft=htmldjango.html
 " Set .less files to CSS syntax
 au BufRead,BufNewFile *.less setf css
 
-" No need for lh usemarks with delimitMate
-au BufRead,BufNewFile * let b:usemarks=0
-
 " ,r - Execute the current buffer with the current filetype
 function! RunCommand()
   let lang = &ft
