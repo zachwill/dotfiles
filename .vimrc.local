@@ -150,15 +150,12 @@ endfunc
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
 vmap <leader>/ :call NERDComment(0, "invert")<cr>
 
-" Split current buffers into tabs
-" command <leader>bt :bufdo tab split<CR>
-
 " TextMate functionality with delimitMate
 set backspace=2
 let delimitMate_expand_cr = 1
 let b:delimitMate_expand_cr = 1
 
-" minibufexpl
+" MiniBufExpl plugin settings
 let g:miniBufExplVSplit = 25
 let g:miniBufExplorerMoreThanOne = 100
 let g:miniBufExplUseSingleClick = 1
