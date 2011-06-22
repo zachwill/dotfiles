@@ -31,6 +31,9 @@ set guifont=Droid\ Sans\ Mono:h12
 set ruler
 syntax on
 
+" Always vsplit windows to the right of current one
+set splitright
+
 " Mouse support
 if has("mouse")
   set mouse=a
