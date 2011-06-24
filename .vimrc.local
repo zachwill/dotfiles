@@ -3,6 +3,7 @@ let mapleader = ","
 
 " filetype plugin's on
 filetype on
+filetype indent on
 filetype plugin on
 
 " 256 colors on iTerm2
@@ -150,6 +151,9 @@ endfunc
 " ,/ to invert comment on the current line/selection
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
 vmap <leader>/ :call NERDComment(0, "invert")<cr>
+
+" Workaround to get endwise.vim to work for Ruby files.
+let g:SuperTabCrMapping = 0
 
 " TextMate functionality with delimitMate
 set backspace=2
