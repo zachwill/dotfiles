@@ -3,7 +3,6 @@ let mapleader = ","
 
 " filetype plugin's on
 filetype on
-filetype indent on
 filetype plugin on
 
 " 256 colors on iTerm2
@@ -44,11 +43,16 @@ set mousefocus
 " Hide mouse pointer on insert mode.
 set mousehide
 
+" Commandline abbreviations for new tabs
+ca tn tabnew
+ca th tabp
+ca tl tabn
+
 " :Q! force quits now
 command! -bar -bang Q quit<bang>
 
 " :W writes, too
-command! W :w
+command! W write
 
 " gm to go to the middle of a line
 map gm :call cursor(0, virtcol('$')/2)<CR>
@@ -153,7 +157,7 @@ nmap <leader>/ :call NERDComment(0, "invert")<cr>
 vmap <leader>/ :call NERDComment(0, "invert")<cr>
 
 " Workaround to get endwise.vim to work for Ruby files.
-let g:SuperTabCrMapping = 0
+au BufRead,BufNewFile *.rb let g:SuperTabCrMapping = 0
 
 " TextMate functionality with delimitMate
 set backspace=2
