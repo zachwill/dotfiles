@@ -22,6 +22,14 @@ from code import InteractiveConsole
 # Imports we want
 import datetime
 import pdb
+import re
+import json
+
+try:
+    from urllib2 import urlopen
+except ImportError:  # pragma: no cover
+    # For Python 3.
+    from urllib.request import urlopen
 
 
 # Color Support
