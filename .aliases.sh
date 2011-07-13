@@ -3,6 +3,16 @@
 # Use .json_tool.py to print JSON input
 alias json='python ~/.json_tool.py'
 
+# lesscss
+alias lessc="$HOME/.lessc/bin/lessc"
+
+# Add PhantomJS to PATH
+alias phantomjs="/Library/phantomjs.app/Contents/MacOS/phantomjs"
+
+# Colored ls output
+alias ls='ls -G'
+alias la='ls -Ga'
+
 # Reload ~/.bash_profile
 alias reload='source ~/.bash_profile'
 

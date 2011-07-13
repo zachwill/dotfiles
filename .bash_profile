@@ -16,7 +16,7 @@ export PATH
 set -o vi
 
 # Set default editor to vim.
-export EDITOR=vim
+export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
 # Python file for interactive console
 export PYTHONSTARTUP=$HOME/.pythonrc.py
@@ -31,6 +31,17 @@ export PYTHONSTARTUP=$HOME/.pythonrc.py
 # Usage:
 #   long_process && growl "long_process complete"
 growl() { echo -e $'\e]9;'${@}'\007'; return ; }
+
+# Shell function to turn .less files in the current directory
+# into minified CSS files.
+lesscss(){
+  for file in $(ls | grep .less$)
+  do
+    css_file=${file/less/css}
+    lessc -x $file > $css_file
+  done
+}
+
 
 # The following is for a green git prompt of the current branch.
 if [ -f ~/.git_completion.sh ]; then
