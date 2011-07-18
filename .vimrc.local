@@ -122,6 +122,8 @@ au BufRead,BufNewFile * call RunCommand()
 au BufRead,BufNewFile *.py nmap <leader>p :w<Esc>:!pypy %<cr>
 " ,8 to check Python file follows PEP 8 Style Guide
 au BufRead,BufNewFile *.py nmap <leader>8 :w<Esc>:!pep8 %<cr>
+" ,n to run nosetests with coverage
+au BufRead,BufNewFile *.py nmap <leader>n :w<Esc>:!nosetests --with-coverage --cover-package=$PWD<cr>
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.py[c|o]$']

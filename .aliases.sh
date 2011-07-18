@@ -3,6 +3,9 @@
 # Use .json_tool.py to print JSON input
 alias json='python ~/.json_tool.py'
 
+# Run nosetests with coverage for current directory
+alias nose="nosetests --cover-erase --with-coverage --cover-package=$PWD"
+
 # lesscss
 alias lessc="$HOME/.lessc/bin/lessc"
 
