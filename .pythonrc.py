@@ -24,6 +24,7 @@ import datetime
 import pdb
 import re
 import json
+from timeit import Timer
 
 try:
     from urllib2 import urlopen
