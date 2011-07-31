@@ -101,6 +101,12 @@ au BufRead,BufNewFile *.py syn match print /print\s/
 " Allows template syntax + Sparkup plugin functionality.
 au! FileType htmldjango set ft=htmldjango.html
 
+" Django tests need a different <leader>r configuration
+function! DjangoTest(file_name)
+  let file_name_str=a:file_name
+  exe "nmap <buffer> <leader>r :!python manage.py test " . file_name_str . " <CR>"
+endfunction
+
 " Set .less files to CSS syntax
 au BufRead,BufNewFile *.less setf css
 
@@ -126,7 +132,7 @@ au BufRead,BufNewFile *.py nmap <leader>8 :w<Esc>:!pep8 %<cr>
 au BufRead,BufNewFile *.py nmap <leader>n :w<Esc>:!nosetests --with-coverage --cover-package=$PWD<cr>
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.rbc$', '\~$', '\.py[c|o]$']
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.sqlite3$', '\.py[c|o]$']
 map <C-P> :NERDTreeToggle<CR>
 
 " Shortcut for Align plugin
@@ -143,6 +149,7 @@ map <leader>cd :ChangeDirectory %:p:h<CR>:pwd<CR>
 " CommandT functionality with ,t or ,f
 map <leader>t :CommandT<CR>
 map <leader>f :CommandT<CR>
+nmap ; :CommandT<CR>
 
 " Show syntax highlighting groups for word under cursor
 " by hitting Ctrl+L -- think L for language
