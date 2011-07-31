@@ -15,6 +15,7 @@ alias phantomjs="/Library/phantomjs.app/Contents/MacOS/phantomjs"
 # Colored ls output
 alias ls='ls -G'
 alias la='ls -Ga'
+alias ll='ls -Gl'
 
 # Reload ~/.bash_profile
 alias reload='source ~/.bash_profile'
