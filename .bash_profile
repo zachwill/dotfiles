@@ -4,8 +4,8 @@ PATH="/Library/go/bin:${PATH}"
 # Add node.js to PATH
 PATH="$PATH:$HOME/.node/bin"
 
-# Add Scala to PATH
-PATH="$PATH:$HOME/Library/scala/bin"
+# Add GDAL to PATH
+PATH="$PATH:/Library/Frameworks/GDAL.framework/Programs"
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
@@ -40,6 +40,15 @@ lesscss(){
     css_file=${file/less/css}
     lessc -x $file > $css_file
   done
+}
+
+# For working with Python's pip and virtualenv modules.
+activate() {
+  if [ "$1" != "" ]; then
+    source "$1/bin/activate"
+  else
+    source "./bin/activate"
+  fi
 }
 
 
