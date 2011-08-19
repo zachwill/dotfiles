@@ -79,7 +79,11 @@ HISTFILE="%s/.pyhistory" % os.environ["HOME"]
 
 # Read the existing history if there is one
 if os.path.exists(HISTFILE):
-    readline.read_history_file(HISTFILE)
+    try:
+        readline.read_history_file(HISTFILE)
+    except IOError:
+        # I'm assuming this is caused by Pypy and Python?
+        pass
 
 # Set maximum number of items that will be written to the history file
 readline.set_history_length(300)
