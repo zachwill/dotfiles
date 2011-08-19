@@ -3,6 +3,9 @@
 # Use .json_tool.py to print JSON input
 alias json='python ~/.json_tool.py'
 
+# Use the whatismyip.py script to find IP
+alias whatismyip='python ~/.whatismyip.py'
+
 # Run nosetests with coverage for current directory
 alias nose="nosetests --cover-erase --with-coverage --cover-package=$PWD"
 
@@ -48,5 +51,8 @@ alias ss='screen -S'
 alias sr='screen -r'
 alias sls='screen -ls'
 
-# Use GCC to compile C++ files.
-alias gccp='gcc -lstdc++'
+# Alias to Python library
+alias PYTHON_LIB='cd /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/'
+
+# Objective-C GCC compiling.
+alias objc='gcc -framework foundation'
