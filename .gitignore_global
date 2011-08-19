@@ -1,6 +1,10 @@
+# Mac OS X
+.DS_Store
+
+# Generated files
+*.[oa]
 *.py[co]
 *.rbc
-.DS_Store
 
 # Python Packages
 *.egg
@@ -21,3 +25,12 @@ pip-log.txt
 # Unit test / coverage
 .coverage
 .tox
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
