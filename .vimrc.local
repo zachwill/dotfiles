@@ -97,6 +97,9 @@ au FileType python,c call s:pythonWrapping()
 
 au BufRead,BufNewFile *.py syn match print /print\s/
 
+" Objective-C files shouldn't have Matlab filetypes.
+au BufRead,BufNewFile *.m set ft=objc
+
 " Set new Django HTML files to 'htmldjango.html' filetype.
 " Allows template syntax + Sparkup plugin functionality.
 au! FileType htmldjango set ft=htmldjango.html
