@@ -1,3 +1,6 @@
+# Add local bin to PATH
+PATH="/usr/local/bin:${PATH}"
+
 # Add Go to PATH
 PATH="/Library/go/bin:${PATH}"
 
