@@ -57,6 +57,15 @@ command! W write
 " gm to go to the middle of a line
 map gm :call cursor(0, virtcol('$')/2)<CR>
 
+" Add Python ctags functionality
+set tags+=$HOME/.vim/tags/python.ctags
+
+" Optimal commands for working with ctags
+map gt :TlistToggle<CR>
+map g] <C-]>
+map g[ :pop<CR>
+map gn :tnext<CR>
+
 " Alt-. to repeat but cursor remain where it was before the command.
 nmap <A-.> .`[
 
@@ -99,6 +108,7 @@ au BufRead,BufNewFile *.py syn match print /print\s/
 
 " Objective-C files shouldn't have Matlab filetypes.
 au BufRead,BufNewFile *.m set ft=objc
+let tlist_objc_settings = 'objc;i:interface;c:class;m:method;p:property'
 
 " Set new Django HTML files to 'htmldjango.html' filetype.
 " Allows template syntax + Sparkup plugin functionality.
