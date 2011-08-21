@@ -54,6 +54,11 @@ activate() {
   fi
 }
 
+# Easy switching between DotCloud config files.
+dotcloud_config() {
+  export DOTCLOUD_CONFIG_FILE="$HOME/.dotcloud/$1.conf"
+}
+
 
 # The following is for a green git prompt of the current branch.
 if [ -f ~/.git_completion.sh ]; then
