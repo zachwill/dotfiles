@@ -90,7 +90,7 @@ nmap + <C-W>>
 nmap _ <C-W><
 
 " Proper indentation of braces for C-like languages
-au FileType c,cpp,javascript,java imap { {}<left><cr><cr><up><tab>
+au FileType c,cpp,javascript,java imap <buffer> { {}<left><cr><cr><up><tab>
 
 " Python Auto Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
