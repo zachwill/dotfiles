@@ -113,15 +113,15 @@ let tlist_objc_settings = 'objc;i:interface;c:class;m:method;p:property'
 " Set new Django HTML files to 'htmldjango.html' filetype.
 " Allows template syntax + Sparkup plugin functionality.
 au! FileType htmldjango set ft=htmldjango.html
+" Set LESS CSS files to CSS filetype.
+au! BufRead,BufNewFile *.less set ft=less.css
+au BufRead,BufNewFile *.less call s:pythonWrapping()
 
 " Django tests need a different <leader>r configuration
 function! DjangoTest(file_name)
   let file_name_str=a:file_name
   exe "nmap <buffer> <leader>r :!python manage.py test " . file_name_str . " <CR>"
 endfunction
-
-" Set .less files to CSS syntax
-au BufRead,BufNewFile *.less setf css
 
 " ,r - Execute the current buffer with the current filetype
 function! RunCommand()
@@ -160,9 +160,10 @@ cnoremap %% <C-R>=expand("%:p:h") . "/"<CR>
 map <leader>cd :ChangeDirectory %:p:h<CR>:pwd<CR>
 
 " CommandT functionality with ,t or ,f
-map <leader>t :CommandT<CR>
 map <leader>f :CommandT<CR>
 nmap ; :CommandT<CR>
+" :flush will perform a CommandTFlush
+ca flush CommandTFlush
 
 " Show syntax highlighting groups for word under cursor
 " by hitting Ctrl+L -- think L for language
@@ -193,6 +194,19 @@ let g:miniBufExplUseSingleClick = 1
 
 " ,b to display current buffers list
 nmap <Leader>b :MiniBufExplorer<cr>
+
+
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 
 " For more info: http://goo.gl/PD4Tv
