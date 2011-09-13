@@ -1,6 +1,9 @@
 # Mac OS X
 .DS_Store
 
+# Adobe Files
+*.psd
+
 # Generated files
 *.[oa]
 *.py[co]
@@ -18,6 +21,11 @@ bin
 var
 develop-eggs
 .installed.cfg
+
+# Virtualenv
+.Python
+include
+lib
 
 # Pip Installer Log
 pip-log.txt
