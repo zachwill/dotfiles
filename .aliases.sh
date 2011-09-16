@@ -29,6 +29,9 @@ alias vi='vim'
 # Newer version of vim in MacVim distribution
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
 
+# Enhanced git for the win.
+alias git=hub
+
 # Alias for Tcl shell-like interpreter
 alias tcl='tclsh'
 
