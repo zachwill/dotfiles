@@ -89,21 +89,26 @@ nmap <C-M> :b#<CR>
 nmap + <C-W>>
 nmap _ <C-W><
 
+" StatusLine background should change on insert.
+hi StatusLine ctermfg=18
+au InsertEnter * hi StatusLine ctermfg=54
+au InsertLeave * hi StatusLine ctermfg=18
+
 " Proper indentation of braces for C-like languages
 au FileType c,cpp,javascript,java,objc imap <buffer>{ {}<left><cr><cr><up><tab>
 
 " Python Auto Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
-" Python PEP8 styling
+" Python PEP8 styling.
 function s:pythonWrapping()
     set shiftwidth=4
     set softtabstop=4
 endfunction
 
-" Python and C files need 4 spaces
+" Python and C files need 4 spaces.
 au FileType python,c call s:pythonWrapping()
-
+" Python `print` matching.
 au BufRead,BufNewFile *.py syn match print /print\s/
 
 " Objective-C files shouldn't have Matlab filetypes.
@@ -349,6 +354,8 @@ ruby << RUBY
     VIM.command(%{call ChangeDirectory(system("dirname " . a:file), 0)})
   end
 RUBY
+  " Flush CommandT so that the file can be opened.
+  execute ":CommandTFlush"
 endfunction
 
 " Define the NERDTree-aware aliases
