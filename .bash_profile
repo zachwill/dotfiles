@@ -4,15 +4,11 @@ PATH="/usr/local/bin:${PATH}"
 # Add Go to PATH
 PATH="/Library/go/bin:${PATH}"
 
-# Add node.js to PATH
-PATH="$PATH:$HOME/.node/bin"
-
 # Add GDAL to PATH
 PATH="$PATH:/Library/Frameworks/GDAL.framework/Programs"
 
 # Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
 export PATH
 
 # Vi editing mode for bash.
@@ -26,6 +22,9 @@ export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 # Source .aliases.sh file
 [[ -s "$HOME/.aliases.sh" ]] && . "$HOME/.aliases.sh"
+
+# Django shell autocompletion
+[[ -s "$HOME/.django_completion.sh" ]] && . "$HOME/.django_completion.sh"
 
 # Load RVM function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -77,3 +76,7 @@ function parse_git_branch {
 
 # Cool characters: ✩ ✪ ⚡
 export PS1='\u:\W $(__git_ps1 "(\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(parse_git_dirty)\[\e[0m\]) ")✩  '
+
+# Settings for Mapnik.framework Installer to enable Mapnik programs and python bindings
+export PATH=/Library/Frameworks/Mapnik.framework/Programs:$PATH
+export PYTHONPATH=/Library/Frameworks/Mapnik.framework/Python:$PYTHONPATH
