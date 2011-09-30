@@ -18,7 +18,7 @@
   changed = blue bold
   untracked = red
 [alias]
-  st = status
+  st = status -sb
   sb = status -sb
   aa = add -A
   br = branch
@@ -29,5 +29,6 @@
   last = log -1 HEAD
   lg = log --graph --decorate --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   tree = log --graph --decorate --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  today = diff --stat @{yesterday}..HEAD
 [github]
   user = zachwill
