@@ -48,6 +48,8 @@ lesscss(){
 activate() {
   if [ "$1" != "" ]; then
     source "$1/bin/activate"
+  elif [ -d "env" ]; then
+    source "env/bin/activate"
   else
     source "./bin/activate"
   fi
