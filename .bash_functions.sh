@@ -10,8 +10,7 @@ growl() {
 # Shell function to turn .less files in the current directory
 # into minified CSS files.
 lesscss(){
-  for file in $(find . -type f | grep .less$)
-  do
+  for file in $(find . -type f | grep .less$); do
     css_file=${file/less/css}
     lessc -x $file > $css_file
   done
