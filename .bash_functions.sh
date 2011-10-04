@@ -1,11 +1,11 @@
 #!/bin/bash
 
-
 # Growl command for iTerm2 -- useful for notifications.
 # Usage:
 #   long_process && growl "long_process complete"
-growl() { echo -e $'\e]9;'${@}'\007'; return ; }
-
+growl() {
+  echo -e $'\e]9;'${@}'\007'
+}
 
 # Shell function to turn .less files in the current directory
 # into minified CSS files.
@@ -17,7 +17,6 @@ lesscss(){
   done
 }
 
-
 # For working with Python's pip and virtualenv modules.
 activate() {
   if [ "$1" != "" ]; then
@@ -28,7 +27,6 @@ activate() {
     source "./bin/activate"
   fi
 }
-
 
 # Easy switching between DotCloud config files.
 dotcloud_config() {
