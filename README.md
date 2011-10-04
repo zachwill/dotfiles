@@ -8,4 +8,4 @@ Mac.
 Picture Of Bash Prompt In Action
 --------------------------------
 
-![My bash prompt](https://img.skitch.com/20110414-duxfx2dctty1schymgwcqy1cgc.png)
+![My bash prompt](https://img.skitch.com/20111005-f814rapeh3pf382jsh6ujmhr96.png)
