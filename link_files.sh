@@ -13,24 +13,28 @@ NC='\033[0m' # No Color
 
 
 link_file() {
-  ln -s $PWD/$file $HOME/$file && echo "${GREEN}Linked ~/$file ${NC}" ;
+  ln -s $PWD/$file $HOME/$file && echo "${GREEN}Linked ~/$file ${NC}"
 }
 
-rm_and_link() { rm $HOME/$file && link_file ; }
+rm_and_link() {
+  rm $HOME/$file && link_file
+}
 
 prompt_deletion() {
-  read -n1 -p "Delete ~/$file and link new one? (y/n) " ;
-  printf "\n" ;  # Blank newline
-  [[ $REPLY == [yY] ]] && rm_and_link || echo "${RED}File not linked.${NC}";
+  read -n1 -p "Delete ~/$file and link new one? (y/n) "
+  printf "\n"
+  [[ $REPLY == [yY] ]] && rm_and_link || echo "${RED}File not linked.${NC}"
 }
 
-for file in $(ls -a | grep ^\\.[a-z] | grep -v .git$)
-do
-  if [ -e $HOME/$file ]
-    then
-      prompt_deletion
-    else
-      link_file
+
+# Loop through available dotfiles...
+for file in $(ls -a | grep ^\\.[a-z] | grep -v .git$); do
+  if [ -e $HOME/$file ]; then
+    prompt_deletion
+  else
+    link_file
   fi
 done
+
+# All done.
 echo "\n${BLUE}Returning to shell...${NC}\n"
