@@ -122,6 +122,12 @@ au! FileType htmldjango set ft=htmldjango.html
 au! BufRead,BufNewFile *.less set ft=less.css
 au BufRead,BufNewFile *.less call s:pythonWrapping()
 
+" Get rid of end of line spaces
+function! EOLSpaces()
+  exe "1,$s/[ <tab>]*$//"
+  exe "normal! gg<CR>"
+endfunction
+
 " Django tests need a different <leader>r configuration
 function! DjangoTest(file_name)
   let file_name_str=a:file_name
