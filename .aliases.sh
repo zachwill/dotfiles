@@ -49,7 +49,7 @@ alias mkdir='mkdir -p'
 # Who doesn't love tree's colored output?
 alias tree='tree -C'
 
-# Kill all jobs
+# Kill all the jobs!
 alias killjobs='kill -9 $(jobs -p)'
 
 # Aliases to interact with GNU screen
@@ -62,3 +62,6 @@ alias PYTHON_LIB='cd /Library/Frameworks/Python.framework/Versions/2.7/lib/pytho
 
 # Objective-C GCC compiling.
 alias objc='gcc -framework foundation'
+
+# For Memcache
+EVENT_NOKQUEUE=1
