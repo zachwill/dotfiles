@@ -7,8 +7,16 @@ PATH="/Library/go/bin:${PATH}"
 # Add GDAL to PATH
 PATH="$PATH:/Library/Frameworks/GDAL.framework/Programs"
 
+# Add Scala to PATH
+PATH="$HOME/Library/scala/bin:${PATH}"
+
+# Add node modules
+PATH="$HOME/node_modules/.bin:${PATH}"
+
 # Setting PATH for Python 2.7
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+
+# Export the PATH
 export PATH
 
 # Vi editing mode for bash.
