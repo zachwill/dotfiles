@@ -32,6 +32,9 @@ alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 # Enhanced git for the win.
 alias git=hub
 
+# Because I misspell often...
+alias gti='git'
+
 # Alias for Tcl shell-like interpreter
 alias tcl='tclsh'
 
