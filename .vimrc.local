@@ -34,6 +34,9 @@ syntax on
 " Always vsplit windows to the right of current one
 set splitright
 
+" Wild ignore certain types of files
+set wildignore=*.o,*.obj,node_modules/**
+
 " Mouse support
 if has("mouse")
   set mouse=a
@@ -132,6 +135,11 @@ endfunction
 function! DjangoTest(file_name)
   let file_name_str=a:file_name
   exe "nmap <buffer> <leader>r :!python manage.py test " . file_name_str . " <CR>"
+endfunction
+
+" Vows tests need a different <leader>r configuration
+function! VowsTest()
+  exe "nmap <buffer> <leader>r :!vows % <CR>"
 endfunction
 
 " ,r - Execute the current buffer with the current filetype

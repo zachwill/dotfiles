@@ -31,3 +31,12 @@ activate() {
 dotcloud_config() {
   export DOTCLOUD_CONFIG_FILE="$HOME/.dotcloud/$1.conf"
 }
+
+# Advanced `git` commands.
+git() {
+  if [[ $@ == "total" ]]; then
+    command git tree | wc -l;
+  else
+    command git "$@";
+  fi;
+}
