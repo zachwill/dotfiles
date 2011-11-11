@@ -12,12 +12,13 @@
 # Python Packages
 *.egg
 *.egg-info
+bin
 build
 dist
 sdist
 eggs
+env
 parts
-bin
 var
 develop-eggs
 .installed.cfg
