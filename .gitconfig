@@ -1,5 +1,5 @@
 [user]
-	name = Zach Williams
+  name = Zach Williams
   email = hey@zachwill.com
 [core]
   editor = vim
@@ -30,6 +30,6 @@
   lg = log --graph --decorate --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   tree = log --graph --decorate --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   today = diff --stat @{yesterday}..HEAD
-  total = '!git tree | wc -l'
+  total = !git tree | wc -l
 [github]
   user = zachwill
