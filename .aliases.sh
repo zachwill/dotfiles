@@ -15,10 +15,18 @@ alias lessc="$HOME/.lessc/bin/lessc"
 # Add PhantomJS to PATH
 alias phantomjs="/Library/phantomjs.app/Contents/MacOS/phantomjs"
 
+# Because I sometimes forget I'm not in Vim
+alias :q='echo LOLVIM'
+alias :w='echo LOLVIM'
+
 # Colored ls output
 alias ls='ls -G'
 alias la='ls -Ga'
 alias ll='ls -Gl'
+
+# Convenient shell commands
+alias cd..='cd ..'
+alias ..='cd ..'
 
 # Reload ~/.bash_profile
 alias reload='source ~/.bash_profile'
