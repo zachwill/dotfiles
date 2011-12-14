@@ -52,10 +52,13 @@ ca th tabp
 ca tl tabn
 
 " :Q! force quits now
-command! -bar -bang Q quit<bang>
+ca Q! q!
+ca Qa qa
 
 " :W writes, too
-command! W write
+ca W w
+ca Wq wq
+ca Wqa wqa
 
 " gm to go to the middle of a line
 map gm :call cursor(0, virtcol('$')/2)<CR>
@@ -124,6 +127,9 @@ au! FileType htmldjango set ft=htmldjango.html
 " Set LESS CSS files to CSS filetype.
 au! BufRead,BufNewFile *.less set ft=less.css
 au BufRead,BufNewFile *.less call s:pythonWrapping()
+
+" Compile CoffeeScript with ,c
+au FileType coffee map <buffer><leader>c :CoffeeCompile<CR>
 
 " Get rid of end of line spaces
 function! EOLSpaces()
