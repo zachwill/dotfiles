@@ -28,6 +28,9 @@ export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 # Python file for interactive console
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
+# Node modules
+export NODE_PATH=$HOME/node_modules
+
 # Source .aliases.sh file
 [[ -s "$HOME/.aliases.sh" ]] && . "$HOME/.aliases.sh"
 
