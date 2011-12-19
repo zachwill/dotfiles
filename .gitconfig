@@ -25,11 +25,14 @@
   ci = commit
   co = checkout
   df = diff
+  ui = update-index
+  unchange = update-index --assume-unchanged
+  change = update-index --no-assume-unchanged
   dc = diff --cached
   last = log -1 HEAD
   lg = log --graph --decorate --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   tree = log --graph --decorate --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  today = diff --stat @{yesterday}..HEAD
+  today = diff --stat @{12am}..HEAD
   total = !git tree | wc -l
 [github]
   user = zachwill
