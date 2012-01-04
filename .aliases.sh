@@ -19,6 +19,10 @@ alias phantomjs="/Library/phantomjs.app/Contents/MacOS/phantomjs"
 alias :q='echo LOLVIM'
 alias :w='echo LOLVIM'
 
+# git can be a little verbose
+alias gpo='git push origin'
+alias gph='git push heroku'
+
 # Colored ls output
 alias ls='ls -G'
 alias ll='ls -Gl'
@@ -32,7 +36,7 @@ alias ..='cd ..'
 # Reload ~/.bash_profile
 alias reload='source ~/.bash_profile'
 
-#vi should point to vim
+# vi should point to vim
 alias vi='vim'
 
 # Newer version of vim in MacVim distribution
