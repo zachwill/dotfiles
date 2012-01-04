@@ -1,9 +1,6 @@
 # Add local bin to PATH
 PATH="/usr/local/bin:${PATH}"
 
-# Add Go to PATH
-PATH="/Library/go/bin:${PATH}"
-
 # Add GDAL to PATH
 PATH="$PATH:/Library/Frameworks/GDAL.framework/Programs"
 
