@@ -34,5 +34,6 @@
   tree = log --graph --decorate --pretty=format:'%C(magenta)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   today = diff --stat @{12am}..HEAD
   total = !git tree | wc -l
+  oh = !git push origin && git push heroku
 [github]
   user = zachwill
