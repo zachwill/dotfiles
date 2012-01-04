@@ -21,8 +21,9 @@ alias :w='echo LOLVIM'
 
 # Colored ls output
 alias ls='ls -G'
-alias la='ls -Ga'
 alias ll='ls -Gl'
+alias la='ls -Ga'
+alias lsa='ls -Ga'
 
 # Convenient shell commands
 alias cd..='cd ..'
