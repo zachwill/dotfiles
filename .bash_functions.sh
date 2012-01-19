@@ -31,3 +31,9 @@ activate() {
 dotcloud_config() {
   export DOTCLOUD_CONFIG_FILE="$HOME/.dotcloud/$1.conf"
 }
+
+sk(){
+  if [ "$1" != "" ]; then
+    screen -S $1 -X kill
+  fi
+}
