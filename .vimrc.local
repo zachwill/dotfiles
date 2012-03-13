@@ -35,7 +35,7 @@ syntax on
 set splitright
 
 " Wild ignore certain types of files
-set wildignore=*.o,*.obj,node_modules/**
+set wildignore+=*.o,*.obj,node_modules/**,env/*
 
 " Mouse support
 if has("mouse")
@@ -94,6 +94,15 @@ nmap <C-M> :b#<CR>
 " Easy window width resizing with +/_ keys
 nmap + <C-W>>
 nmap _ <C-W><
+
+" Split line (sister to [J]oin lines)
+nmap <C-j> i<CR><ESC>l
+nnoremap K <C-Z>
+nnoremap S :noh<CR>
+
+" Window splits
+map vv :vsplit<CR>
+map ss :split<CR>
 
 " StatusLine background should change on insert.
 hi StatusLine ctermfg=18
@@ -162,6 +171,24 @@ endfunction
 " ,r to execute current buffer
 au BufRead,BufNewFile * call RunCommand()
 
+" Reload Google Chrome on Mac.
+" Taken from:  https://github.com/gcollazo/BrowserRefresh-Sublime/
+function! ChromeReload()
+python << EOF
+from subprocess import call
+browser = """
+tell application "Google Chrome" to tell the active tab of its first window
+    reload
+end tell
+tell application "Google Chrome" to activate
+"""
+call(['osascript', '-e', browser])
+EOF
+endfunction
+
+" ,g to reload Google Chrome
+map <leader>g :call ChromeReload()<CR>
+
 " ,p to execute Python script with pypy
 au BufRead,BufNewFile *.py nmap <leader>p :w<Esc>:!pypy %<cr>
 " ,8 to check Python file follows PEP 8 Style Guide
@@ -205,7 +232,7 @@ nmap <leader>/ :call NERDComment(0, "invert")<cr>
 vmap <leader>/ :call NERDComment(0, "invert")<cr>
 
 " Workaround to get endwise.vim to work for Ruby files.
-au BufRead,BufNewFile *.rb let g:SuperTabCrMapping = 0
+au BufRead,BufNewFile *.rb let g:SuperTabCrMapping = 1
 
 " TextMate functionality with delimitMate
 set backspace=2
