@@ -15,6 +15,9 @@ alias lessc="$HOME/.lessc/bin/lessc"
 # Add PhantomJS to PATH
 alias phantomjs="/Library/phantomjs.app/Contents/MacOS/phantomjs"
 
+# Python server
+alias simple='python -m SimpleHTTPServer'
+
 # Because I sometimes forget I'm not in Vim
 alias :q='echo LOLVIM'
 alias :w='echo LOLVIM'
@@ -29,9 +32,11 @@ alias ll='ls -Gl'
 alias la='ls -Ga'
 alias lsa='ls -Ga'
 
+# Because I'm tired of typing `brew switch`.
+alias bs='brew switch'
+
 # Convenient shell commands
 alias cd..='cd ..'
-alias ..='cd ..'
 
 # Reload ~/.bash_profile
 alias reload='source ~/.bash_profile'
