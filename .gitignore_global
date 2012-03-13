@@ -24,6 +24,7 @@ develop-eggs
 .installed.cfg
 
 # Virtualenv
+.env
 .Python
 include
 lib
