@@ -5,10 +5,7 @@ PATH="/usr/local/bin:${PATH}"
 PATH="$PATH:/Library/Frameworks/GDAL.framework/Programs"
 
 # Add Scala to PATH
-PATH="$HOME/Library/scala/bin:${PATH}"
-
-# Add node modules
-PATH="$HOME/node_modules/.bin:${PATH}"
+# PATH="$HOME/Library/scala/bin:${PATH}"
 
 # Setting PATH for Python 2.7
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
@@ -26,7 +23,7 @@ export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export PYTHONSTARTUP=$HOME/.pythonrc.py
 
 # Node modules
-export NODE_PATH=$HOME/node_modules
+export NODE_PATH="/usr/local/lib/node_modules"
 
 # Source .aliases.sh file
 [[ -s "$HOME/.aliases.sh" ]] && . "$HOME/.aliases.sh"
