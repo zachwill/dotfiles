@@ -28,8 +28,8 @@ export NODE_PATH="/usr/local/lib/node_modules"
 # Source .aliases.sh file
 [[ -s "$HOME/.aliases.sh" ]] && . "$HOME/.aliases.sh"
 
-# Source .bash_functions.sh file
-[[ -s "$HOME/.bash_functions.sh" ]] && . "$HOME/.bash_functions.sh"
+# Source .functions.sh file
+[[ -s "$HOME/.functions.sh" ]] && . "$HOME/.functions.sh"
 
 # Django shell autocompletion
 [[ -s "$HOME/.django_completion.sh" ]] && . "$HOME/.django_completion.sh"
