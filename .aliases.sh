@@ -9,9 +9,6 @@ alias ip='curl ifconfig.me'
 # Run nosetests with coverage for current directory
 alias nose="nosetests --cover-erase --with-coverage --cover-package=$PWD"
 
-# lesscss
-alias lessc="$HOME/.lessc/bin/lessc"
-
 # Add PhantomJS to PATH
 alias phantomjs="/Library/phantomjs.app/Contents/MacOS/phantomjs"
 
@@ -37,6 +34,7 @@ alias bs='brew switch'
 
 # Convenient shell commands
 alias cd..='cd ..'
+alias ..='cd ..'
 
 # Reload ~/.bash_profile
 alias reload='source ~/.bash_profile'
@@ -56,9 +54,8 @@ alias gti='git'
 # Alias for Tcl shell-like interpreter
 alias tcl='tclsh'
 
-# Redis server
+# Redis server and client
 alias redis_server="$HOME/Library/redis/src/redis-server"
-# Redis client
 alias redis="$HOME/Library/redis/src/redis-cli"
 
 # Keep from clobbering directories
@@ -76,10 +73,7 @@ alias sr='screen -r'
 alias sls='screen -ls'
 
 # Alias to Python library
-alias PYTHON_LIB='cd /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/'
-
-# Objective-C GCC compiling.
-alias objc='gcc -framework foundation'
+alias python_lib='cd /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/'
 
 # For Memcache
 EVENT_NOKQUEUE=1
