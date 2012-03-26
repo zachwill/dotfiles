@@ -28,5 +28,6 @@ dotcloud_config() {
 sk(){
   if [ "$1" != "" ]; then
     screen -S $1 -X kill
+    echo "Killed screen: $1"
   fi
 }

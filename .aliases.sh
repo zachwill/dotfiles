@@ -71,6 +71,7 @@ alias killjobs='kill -9 $(jobs -p)'
 alias ss='screen -S'
 alias sr='screen -r'
 alias sls='screen -ls'
+# Don't forget about sk function to kill screens.
 
 # Alias to Python library
 alias python_lib='cd /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/'
