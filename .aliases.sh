@@ -4,7 +4,7 @@
 alias json='python ~/.json_tool.py'
 
 # Use the whatismyip.py script to find IP
-alias whatismyip='python ~/.whatismyip.py'
+alias ip='curl ifconfig.me'
 
 # Run nosetests with coverage for current directory
 alias nose="nosetests --cover-erase --with-coverage --cover-package=$PWD"
