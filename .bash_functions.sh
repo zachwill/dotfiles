@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Growl command for iTerm2 -- useful for notifications.
-# Usage:
-#   long_process && growl "long_process complete"
-growl() {
-  echo -e $'\e]9;'${@}'\007'
-}
-
 # Shell function to turn .less files in the current directory
 # into minified CSS files.
 lesscss(){
