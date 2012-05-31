@@ -9,7 +9,7 @@ filetype plugin on
 set t_Co=256
 
 " Default color scheme
-color textmate
+color github
 
 " Backup directory
 set nobackup
@@ -160,12 +160,16 @@ endfunction
 " ,r - Execute the current buffer with the current filetype
 function! RunCommand()
   let lang = &ft
-  if lang == 'javascript'
-    let lang = 'node'
-  elseif lang == 'c'
-    let lang = 'gcc'
+  if lang =~ "^html"
+    exe "map <leader>r :w<CR>:call ChromeReload()<CR>"
+  elseif lang =~ "css$"
+    exe "map <leader>r :w<CR>:call ChromeReload()<CR>"
+  else
+    if lang == 'javascript'
+      let lang = 'node'
+    endif
+    exe "map <leader>r :w<CR>:!". lang . " %<CR>"
   endif
-  exe "map <leader>r :w<CR>:!". lang . " %<CR>"
 endfunction
 
 " ,r to execute current buffer
@@ -185,9 +189,6 @@ tell application "Google Chrome" to activate
 call(['osascript', '-e', browser])
 EOF
 endfunction
-
-" ,g to reload Google Chrome
-map <leader>g :call ChromeReload()<CR>
 
 " ,p to execute Python script with pypy
 au BufRead,BufNewFile *.py nmap <leader>p :w<Esc>:!pypy %<cr>
