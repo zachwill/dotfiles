@@ -12,6 +12,7 @@ call vundle#rc()
 " ------------
 Bundle 'gmarik/vundle'
 " Github
+Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/supertab'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'guns/xterm-color-table.vim'
@@ -50,9 +51,11 @@ syntax on
 set hlsearch
 set incsearch
 set ignorecase
+set smartcase
+
+" Line numbers
 set number
 set ruler
-set smartcase
 
 " Whitespace
 set nowrap
@@ -60,6 +63,10 @@ set expandtab
 set textwidth=80
 set shiftwidth=2
 set softtabstop=2
+
+" Python whitespace
+au BufRead,BufNewFile *.py set shiftwidth=4
+au BufRead,BufNewFile *.py set softtabstop=4
 
 " Backspace
 set backspace=indent,eol,start
@@ -78,6 +85,12 @@ if has("mouse")
   set mousefocus
   set mousehide
 endif
+
+" Scroll faster
+set ttyfast
+
+" None of these should be word dividers
+set isk+=$,@,%,#
 
 " :Q should quit
 ca Q q
@@ -98,7 +111,7 @@ set splitright
 map vv :vsplit<CR>
 map ss :split<CR>
 
-" Use space to jump down a page
+" Use space to jump by pages
 nnoremap <Space> <PageDown>
 
 " Enter to switch buffers
@@ -149,6 +162,7 @@ tell application "Google Chrome" to tell the active tab of its first window
 end tell
 tell application "Google Chrome" to activate
 """
+call(['osascript', '-e', browser])
 EOF
 endfunction
 
@@ -159,7 +173,8 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-" And map it to CTRL-L
+
+" And, map it to CTRL-L
 nmap <C-L> :call <SID>SynStack()<CR>
 
 " MiniBufExpl plugin settings
