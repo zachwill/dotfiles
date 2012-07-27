@@ -15,6 +15,7 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'mattn/gist-vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
@@ -52,7 +53,7 @@ set smartcase
 " Whitespace
 set nowrap
 set expandtab
-set textwidth=79
+set textwidth=80
 set shiftwidth=2
 set softtabstop=2
 
@@ -99,9 +100,16 @@ nnoremap <Space> <PageDown>
 " Enter to switch buffers
 nmap <Enter> <C-^>
 
+" Clear search highlighting
+nnoremap S :noh<CR>
+
+" Easy search and replace
+nmap <leader>s :%s//g<LEFT><LEFT>
+vmap <leader>s :s//g<LEFT><LEFT>
+
 " CTRL-P fuzzyfinder
 nmap ; :CtrlP<CR>
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*/Library/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*/Library/*,*/env/*
 
 " Invert comment on the current line/selection
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
@@ -117,6 +125,8 @@ function! RunCommand()
   else
     if lang == "javascript"
       let lang = "node"
+    elseif lang == "go"
+      let lang = "go run"
     endif
     exe "map <leader>r :w<CR>:!" . lang . " %<CR>"
   endif
@@ -124,9 +134,6 @@ endfunction
 
 " And every buffer should have it
 au BufRead,BufNewFile * call RunCommand()
-
-" Search stuff
-nnoremap S :noh<CR>
 
 " Reload Google Chrome on Mac
 function! ChromeReload()
@@ -150,7 +157,6 @@ function! <SID>SynStack()
 endfunc
 " And map it to CTRL-L
 nmap <C-L> :call <SID>SynStack()<CR>
-nmap <C-R> :redraw!<CR>
 
 " MiniBufExpl plugin settings
 let g:miniBufExplVSplit = 25
