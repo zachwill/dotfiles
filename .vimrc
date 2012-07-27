@@ -11,11 +11,15 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 " ------------
 Bundle 'gmarik/vundle'
+" Github
+Bundle 'ervandew/supertab'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'guns/xterm-color-table.vim'
+Bundle 'kevinw/pyflakes-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'mattn/gist-vim'
+Bundle 'Raimondi/delimitMate'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
