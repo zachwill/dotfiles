@@ -40,11 +40,11 @@ augroup VimReload
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
 
-" Color scheme
-color monokai
-
 " 256 Colors
 set t_Co=256
+
+" Color scheme
+color monokai
 
 " Syntax stuff
 syntax on
