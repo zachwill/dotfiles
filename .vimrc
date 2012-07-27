@@ -132,6 +132,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*/Library/*,*/env/*
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
 vmap <leader>/ :call NERDComment(0, "invert")<cr>
 
+" Edit a file
+nmap e :n<Space>
+
 " Execute the current buffer
 function! RunCommand()
   let lang = &ft
