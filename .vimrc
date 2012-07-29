@@ -133,6 +133,17 @@ set splitright
 map vv :vsplit<CR>
 map ss :split<CR>
 
+" Easy wrap toggling
+nmap <leader>w :set wrap!<cr>
+nmap <leader>W :set nowrap<cr>
+
+" Insert blank lines without going into insert mode
+nmap go o<Esc>
+nmap gO O<Esc>
+
+" Shortcut for =>
+imap <C-l> <Space>=><Space>
+
 " Use space to jump by pages
 nnoremap <Space> <PageDown>
 
