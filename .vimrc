@@ -15,7 +15,9 @@ Bundle 'gmarik/vundle'
 Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/supertab'
 Bundle 'fholgado/minibufexpl.vim'
+Bundle "groenewege/vim-less"
 Bundle 'guns/xterm-color-table.vim'
+Bundle "juvenn/mustache.vim"
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -57,6 +59,12 @@ set smartcase
 set number
 set ruler
 
+" Backspace
+set backspace=indent,eol,start
+
+" Paste from clipboard
+set clipboard=unnamed
+
 " Whitespace
 set nowrap
 set expandtab
@@ -68,11 +76,17 @@ set softtabstop=2
 au BufRead,BufNewFile *.py set shiftwidth=4
 au BufRead,BufNewFile *.py set softtabstop=4
 
-" Backspace
-set backspace=indent,eol,start
+" CocoaPods and Podfiles
+au BufRead,BufNewFile *.podspec,Podfile set ft=ruby
 
-" Paste from clipboard
-set clipboard=unnamed
+" Less
+au BufNewFile,BufRead *.less set filetype=less
+
+" Markdown files
+au BufRead,BufNewFile *.md set ft=markdown
+
+" Mustache and Handlebars
+au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs set filetype=mustache
 
 " Temporary files
 set nobackup
