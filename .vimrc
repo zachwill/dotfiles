@@ -74,25 +74,6 @@ set textwidth=80
 set shiftwidth=2
 set softtabstop=2
 
-" Python whitespace
-au BufRead,BufNewFile *.py set shiftwidth=4
-au BufRead,BufNewFile *.py set softtabstop=4
-
-" CocoaPods and Podfiles
-au BufRead,BufNewFile *.podspec,Podfile set ft=ruby
-
-" CoffeeScript
-au BufNewFile,BufRead *.coffee set filetype=coffee
-
-" Less
-au BufNewFile,BufRead *.less set filetype=less
-
-" Markdown files
-au BufRead,BufNewFile *.md set filetype=markdown
-
-" Mustache and Handlebars
-au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs set filetype=mustache
-
 " Temporary files
 set nobackup
 set nowritebackup
@@ -110,6 +91,28 @@ set ttyfast
 
 " None of these should be word dividers
 set isk+=$,@,%,#
+
+" CocoaPods and Podfiles
+au BufRead,BufNewFile *.podspec,Podfile set ft=ruby
+
+" CoffeeScript
+au BufNewFile,BufRead *.coffee set filetype=coffee
+
+" JSON
+au BufNewFile,BufRead *.json set ai filetype=javascript
+
+" Less
+au BufNewFile,BufRead *.less set filetype=less
+
+" Markdown files
+au BufRead,BufNewFile *.md set filetype=markdown
+
+" Mustache and Handlebars
+au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs set filetype=mustache
+
+" Python
+au BufRead,BufNewFile *.py set shiftwidth=4
+au BufRead,BufNewFile *.py set softtabstop=4
 
 " :Q should quit
 ca Q q
