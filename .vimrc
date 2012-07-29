@@ -11,13 +11,11 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 " ------------
 Bundle 'gmarik/vundle'
-" Github
+" Plugins
 Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/supertab'
 Bundle 'fholgado/minibufexpl.vim'
-Bundle "groenewege/vim-less"
 Bundle 'guns/xterm-color-table.vim'
-Bundle "juvenn/mustache.vim"
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -28,6 +26,10 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'tomtom/tlib_vim'
+" Syntax
+Bundle "groenewege/vim-less"
+Bundle "juvenn/mustache.vim"
+Bundle 'kchmck/vim-coffee-script'
 " Snippets
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
@@ -79,11 +81,14 @@ au BufRead,BufNewFile *.py set softtabstop=4
 " CocoaPods and Podfiles
 au BufRead,BufNewFile *.podspec,Podfile set ft=ruby
 
+" CoffeeScript
+au BufNewFile,BufRead *.coffee set filetype=coffee
+
 " Less
 au BufNewFile,BufRead *.less set filetype=less
 
 " Markdown files
-au BufRead,BufNewFile *.md set ft=markdown
+au BufRead,BufNewFile *.md set filetype=markdown
 
 " Mustache and Handlebars
 au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs set filetype=mustache
