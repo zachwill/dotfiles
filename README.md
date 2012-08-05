@@ -1,8 +1,7 @@
 What Is This?
 -------------
 
-The dotfiles (`.bash_profile`, `.vimrc.local`, `.screenrc`, etc.) I use on my
-Mac.
+The dotfiles I use on my Mac.
 
 
 Picture Of Bash Prompt In Action
