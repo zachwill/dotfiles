@@ -23,8 +23,9 @@ Bundle 'mattn/gist-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-surround'
 Bundle 'tomtom/tlib_vim'
 " Syntax
 Bundle "groenewege/vim-less"
@@ -208,7 +209,7 @@ function! <SID>SynStack()
     return
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+endfunction
 
 " And, map it to CTRL-L
 nmap <C-L> :call <SID>SynStack()<CR>
