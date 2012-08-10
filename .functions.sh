@@ -28,3 +28,7 @@ sk(){
 work() {
   ls | grep ".*xcworkspace" | xargs open
 }
+
+apps() {
+  cd "$HOME/Music/iTunes/iTunes Media/Mobile Applications"
+}
