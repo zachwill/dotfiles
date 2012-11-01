@@ -45,11 +45,11 @@ function parse_git_dirty {
 }
 
 function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' | tr -d "()"
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 # Cool characters: ✩ ✪ ⚡
-export PS1="\W \[\e[1;32m\](\$(parse_git_branch))\[\e[0m\] ✩  "
+export PS1="\W \[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] ✩  "
 
 # Settings for Mapnik.framework Installer to enable Mapnik programs and python bindings
 # export PATH=/Library/Frameworks/Mapnik.framework/Programs:$PATH
