@@ -14,6 +14,7 @@ Bundle 'gmarik/vundle'
 " Plugins
 Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/supertab'
+Bundle 'eraserhd/vim-ios'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'kevinw/pyflakes-vim'
@@ -24,13 +25,13 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tomtom/tlib_vim'
 " Syntax
 Bundle "groenewege/vim-less"
 Bundle "juvenn/mustache.vim"
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-markdown'
 " Snippets
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
@@ -167,7 +168,7 @@ nmap <leader>/ :call NERDComment(0, "invert")<cr>
 vmap <leader>/ :call NERDComment(0, "invert")<cr>
 
 " Edit a file
-nmap e :n<Space>
+" nmap e :n<Space>
 
 " Execute the current buffer
 function! RunCommand()
