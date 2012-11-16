@@ -144,7 +144,7 @@ nmap go o<Esc>
 nmap gO O<Esc>
 
 " Shortcut for =>
-imap <C-l> <Space>=><Space>
+imap <C-l> =><Space>
 
 " Use space to jump by pages
 nnoremap <Space> <PageDown>
