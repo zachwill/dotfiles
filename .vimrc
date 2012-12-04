@@ -116,6 +116,12 @@ au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs set filetype=mustache
 au BufRead,BufNewFile *.py set shiftwidth=4
 au BufRead,BufNewFile *.py set softtabstop=4
 
+" Makefiles
+au FileType make set noexpandtab
+
+" Automatic brace expansion
+au FileType c,css,javascript imap <buffer>{ {}<left><cr><cr><up><tab>
+
 " :Q should quit
 ca Q q
 ca Q! q!
