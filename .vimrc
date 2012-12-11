@@ -29,8 +29,8 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'tomtom/tlib_vim'
 " Syntax
-Bundle "groenewege/vim-less"
-Bundle "juvenn/mustache.vim"
+Bundle 'groenewege/vim-less'
+Bundle 'juvenn/mustache.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-markdown'
