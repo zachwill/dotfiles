@@ -21,6 +21,7 @@ Bundle 'kevinw/pyflakes-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
@@ -31,6 +32,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle "groenewege/vim-less"
 Bundle "juvenn/mustache.vim"
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-markdown'
 " Snippets
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -121,6 +123,9 @@ au FileType make set noexpandtab
 
 " Automatic brace expansion
 au FileType c,css,javascript imap <buffer>{ {}<left><cr><cr><up><tab>
+
+" Automatic Coffeescript compiling
+au FileType coffee vmap <buffer><leader>r :CoffeeCompile<esc>ggVGy:q<cr>
 
 " :Q should quit
 ca Q q
@@ -228,3 +233,6 @@ let g:miniBufExplUseSingleClick = 1
 
 " ,b to display current buffers list
 nmap <Leader>b :MiniBufExplorer<cr>
+
+" Open browser after posting a gist
+let g:gist_open_browser_after_post = 1
