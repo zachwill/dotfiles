@@ -26,7 +26,8 @@ sk(){
 
 # For Xcode workspaces.
 work() {
-  ls | grep ".*xcworkspace" | xargs open
+  xcode=$(ls | grep ".*xcworkspace" || ls | grep "*.xcodeproj")
+  xcode | xargs open
 }
 
 apps() {
