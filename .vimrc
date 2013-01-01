@@ -125,6 +125,8 @@ au FileType make set noexpandtab
 au FileType c,css,javascript imap <buffer>{ {}<left><cr><cr><up><tab>
 
 " Automatic Coffeescript compiling
+au FileType coffee set shiftwidth=2
+au FileType coffee set softtabstop=2
 au FileType coffee vmap <buffer><leader>r :CoffeeCompile<esc>ggVGy:q<cr>
 
 " :Q should quit
