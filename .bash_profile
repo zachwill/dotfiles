@@ -4,8 +4,8 @@ PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
 # Postgres.app
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 
-# Setting PATH for Python 2.7
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+# Python scripts
+PATH="${PATH}:/usr/local/share/python"
 
 # Export the PATH
 export PATH
