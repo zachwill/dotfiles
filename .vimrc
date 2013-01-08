@@ -118,9 +118,9 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Mustache and Handlebars
 au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs set filetype=mustache
 
-" Python
-au BufRead,BufNewFile *.py set shiftwidth=4
-au BufRead,BufNewFile *.py set softtabstop=4
+" Python and PHP
+au FileType python,php setl shiftwidth=4
+au FileType python,php setl softtabstop=4
 
 " Makefiles
 au FileType make set noexpandtab
