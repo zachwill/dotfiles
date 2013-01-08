@@ -30,6 +30,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tomtom/tlib_vim'
 " Syntax
 Bundle 'groenewege/vim-less'
+Bundle 'jnwhiteh/vim-golang'
 Bundle 'juvenn/mustache.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
@@ -100,7 +101,10 @@ set isk+=$,@,%,#
 au BufRead,BufNewFile *.podspec,Podfile set ft=ruby
 
 " CoffeeScript
-au BufNewFile,BufRead *.coffee set filetype=coffee
+au BufNewFile,BufRead *.coffee set ft=coffee
+
+" Go
+au BufRead,BufNewFile *.go set ft=go
 
 " JSON
 au BufNewFile,BufRead *.json set ai filetype=javascript
@@ -122,7 +126,7 @@ au BufRead,BufNewFile *.py set softtabstop=4
 au FileType make set noexpandtab
 
 " Automatic brace expansion
-au FileType c,css,javascript imap <buffer>{ {}<left><cr><cr><up><tab>
+au FileType c,css,go,javascript imap <buffer>{ {}<left><cr><cr><up><tab>
 
 " Automatic Coffeescript compiling
 au FileType coffee set shiftwidth=2
