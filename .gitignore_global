@@ -1,6 +1,9 @@
 # Mac OS X
 .DS_Store
 
+# Secret secrets
+.secrets.sh
+
 # Adobe Files
 *.psd
 

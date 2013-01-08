@@ -31,6 +31,9 @@ export NODE_PATH="/usr/local/lib/node_modules"
 # Django shell autocompletion
 [[ -s "$HOME/.django_completion.sh" ]] && . "$HOME/.django_completion.sh"
 
+# Our secret shell functions/aliases
+[[ -s "$HOME/.secrets.sh" ]] && . "$HOME/.secrets.sh"
+
 # Load RVM function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
