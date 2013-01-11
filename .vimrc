@@ -232,6 +232,13 @@ endfunction
 " And, map it to CTRL-L
 nmap <C-L> :call <SID>SynStack()<CR>
 
+" SQL statements in PHP should be highlighted
+let php_sql_query=1
+" HTML code in PHP should be highlighted
+let php_htmlInStrings=1
+" HTML code in PHP should be foldable
+let php_folding=1
+
 " MiniBufExpl plugin settings
 let g:miniBufExplVSplit = 25
 let g:miniBufExplorerMoreThanOne = 100
