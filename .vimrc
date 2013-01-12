@@ -75,6 +75,7 @@ set clipboard=unnamed
 " Whitespace
 set nowrap
 set expandtab
+set tabstop=2
 set textwidth=80
 set shiftwidth=2
 set softtabstop=2
@@ -236,8 +237,6 @@ nmap <C-L> :call <SID>SynStack()<CR>
 let php_sql_query=1
 " HTML code in PHP should be highlighted
 let php_htmlInStrings=1
-" HTML code in PHP should be foldable
-let php_folding=1
 
 " MiniBufExpl plugin settings
 let g:miniBufExplVSplit = 25
