@@ -24,6 +24,12 @@ sk(){
   fi
 }
 
+# Taken from alias.sh
+# http://alias.sh/reconnect-or-start-tmux-or-screen-session-over-ssh
+sssh() {
+  ssh -t "$1" 'tmux attach || tmux new || screen -DR';
+}
+
 # For Xcode workspaces.
 work() {
   xcode=$(ls | grep ".*xcworkspace" || ls | grep "*.xcodeproj")
