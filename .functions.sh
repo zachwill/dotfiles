@@ -58,7 +58,7 @@ sssh() {
 
 # For Xcode workspaces.
 work() {
-  xcode=$(ls | grep ".*xcworkspace" || ls | grep "*.xcodeproj")
+  xcode=$(ls | grep ".*xcworkspace" || ls | grep ".*xcodeproj")
   xcode | xargs open
 }
 
