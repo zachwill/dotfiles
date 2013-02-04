@@ -1,0 +1,30 @@
+" Syntax stuff
+set incsearch
+set ignorecase
+set smartcase
+
+" :Q should quit
+ca Q q
+ca Q! q!
+ca Qa qa
+ca qa1 qa!
+
+" :W should write
+ca W w
+ca Wq wq
+ca Wqa wqa
+
+" gm to go to the middle of a line
+map gm :call cursor(0, virtcol('$')/2)<CR>
+
+" Splits
+set splitright
+map vv :vsplit<CR>
+map ss :split<CR>
+
+" Clear search highlighting
+nnoremap S :noh<CR>
+
+" Easy search and replace
+nmap <leader>s :%s//g<LEFT><LEFT>
+vmap <leader>s :s//g<LEFT><LEFT>
