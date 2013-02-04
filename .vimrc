@@ -248,3 +248,6 @@ nmap <Leader>b :MiniBufExplorer<cr>
 
 " Open browser after posting a gist
 let g:gist_open_browser_after_post = 1
+
+" Easymotion
+let g:EasyMotion_leader_key = '<Leader>'
