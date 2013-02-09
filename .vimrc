@@ -255,3 +255,7 @@ let g:gist_open_browser_after_post = 1
 
 " Easymotion
 let g:EasyMotion_leader_key = '<Leader>'
+
+" YouCompleteMe
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_autoclose_preview_window_after_completion = 1
