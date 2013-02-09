@@ -43,13 +43,6 @@ function mcd() {
   mkdir -p "$1" && cd "$1";
 }
 
-sk(){
-  if [ "$1" != "" ]; then
-    screen -S $1 -X kill
-    echo "Killed screen: $1"
-  fi
-}
-
 # Taken from alias.sh
 # http://alias.sh/reconnect-or-start-tmux-or-screen-session-over-ssh
 sssh() {

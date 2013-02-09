@@ -43,7 +43,9 @@ alias reload='source ~/.bash_profile'
 alias vi='vim'
 
 # Newer version of vim in MacVim distribution
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
+fi
 
 # Enhanced git for the win.
 alias git=hub
@@ -71,7 +73,14 @@ alias killjobs='kill -9 $(jobs -p)'
 alias ss='screen -S'
 alias sr='screen -r'
 alias sls='screen -ls'
-# Don't forget about sk function to kill screens.
+
+# Kill a specific screen
+sk(){
+  if [ "$1" != "" ]; then
+    screen -S $1 -X kill
+    echo "Killed screen: $1"
+  fi
+}
 
 # Alias to Python library
 alias python_lib='cd /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/'
