@@ -1,11 +1,12 @@
-# Add local bin to PATH
-PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
-
-# Postgres.app
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
-
-# Python scripts
-PATH="${PATH}:/usr/local/share/python"
+# Mac OS X specific things
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # Add local bin to PATH
+  PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
+  # Postgres.app
+  PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+  # Python scripts
+  PATH="${PATH}:/usr/local/share/python"
+fi
 
 # Export the PATH
 export PATH
@@ -14,7 +15,11 @@ export PATH
 set -o vi
 
 # Set default editor to vim.
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+else
+  export EDITOR=vim
+fi
 
 # Python file for interactive console
 export PYTHONSTARTUP=$HOME/.pythonrc.py
@@ -42,9 +47,6 @@ if [ -f ~/.git_completion.sh ]; then
   source ~/.git_completion.sh
 fi
 
-function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo ""
-}
 
 function parse_git_branch {
   local prompt=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
@@ -54,8 +56,8 @@ function parse_git_branch {
 }
 
 # Cool characters: ✩ ✪ ⚡
-export PS1="\W\[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] ✩  "
-
-# Settings for Mapnik.framework Installer to enable Mapnik programs and python bindings
-# export PATH=/Library/Frameworks/Mapnik.framework/Programs:$PATH
-# export PYTHONPATH=/Library/Frameworks/Mapnik.framework/Python:$PYTHONPATH
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export PS1="\W\[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] ✩  "
+else
+  export PS1="\W\[\e[1;32m\]\$(parse_git_branch)\[\e[0m\] ✪  "
+fi
