@@ -127,7 +127,7 @@ au FileType python,php setl softtabstop=4
 au FileType make set noexpandtab
 
 " Automatic brace expansion
-au FileType c,css,go,php,javascript imap <buffer>{ {}<left><cr><cr><up><tab>
+au FileType c,css,go,php,javascript inoremap <buffer>{ {<CR>}<Esc>ko
 
 " Automatic Coffeescript compiling
 au FileType coffee set shiftwidth=2
