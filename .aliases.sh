@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias star='starcluster'
+
 # Use .json_tool.py to print JSON input
 alias json='python ~/.json_tool.py'
 
@@ -73,6 +75,9 @@ alias killjobs='kill -9 $(jobs -p)'
 alias ss='screen -S'
 alias sr='screen -r'
 alias sls='screen -ls'
+
+# VLC
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
 # Kill a specific screen
 sk(){
