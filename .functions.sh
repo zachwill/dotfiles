@@ -39,7 +39,7 @@ extract() {
 }
 
 # mkdir && cd
-function mcd() {
+mcd() {
   mkdir -p "$1" && cd "$1";
 }
 
@@ -57,4 +57,8 @@ work() {
 
 apps() {
   cd "$HOME/Music/iTunes/iTunes Media/Mobile Applications"
+}
+
+todo() {
+  touch ~/Dropbox/Todo/"$(echo $@)"
 }

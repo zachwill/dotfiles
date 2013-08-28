@@ -45,8 +45,8 @@ Bundle 'Align'
 
 " Automagically source .vimrc
 augroup VimReload
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
 
 " 256 Colors
@@ -96,7 +96,7 @@ endif
 set ttyfast
 
 " None of these should be word dividers
-set isk+=$,@,%,#
+set isk+=@,%,#
 
 " CocoaPods and Podfiles
 au BufRead,BufNewFile *.podspec,Podfile set ft=ruby
@@ -119,9 +119,13 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Mustache and Handlebars
 au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs set filetype=mustache
 
-" Python and PHP
-au FileType python,php setl shiftwidth=4
-au FileType python,php setl softtabstop=4
+" Python
+au FileType python setl shiftwidth=4
+au FileType python setl softtabstop=4
+
+" PHP
+" au FileType php setl sts=4 sw=4
+"au FileType php setl noexpandtab
 
 " Makefiles
 au FileType make set noexpandtab
@@ -180,6 +184,7 @@ vmap <leader>s :s//g<LEFT><LEFT>
 " CTRL-P fuzzyfinder
 nmap ; :CtrlP<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*/Library/*,*/env/*
+set wildignore+=json/*,html/*
 
 " Invert comment on the current line/selection
 nmap <leader>/ :call NERDComment(0, "invert")<cr>

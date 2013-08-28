@@ -42,6 +42,9 @@ export NODE_PATH="/usr/local/lib/node_modules"
 # Load RVM function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+# Autojump
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.bash
+
 # The following is for a green git prompt of the current branch.
 if [ -f ~/.git_completion.sh ]; then
   source ~/.git_completion.sh
