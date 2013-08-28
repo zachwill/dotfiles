@@ -5,7 +5,7 @@ alias star='starcluster'
 # Use .json_tool.py to print JSON input
 alias json='python ~/.json_tool.py'
 
-# Use the whatismyip.py script to find IP
+# Use ifconfig.me website
 alias ip='curl ifconfig.me'
 
 # Run nosetests with coverage for current directory
@@ -29,6 +29,7 @@ alias gph='git push heroku'
 alias ls='ls -G'
 alias ll='ls -Gl'
 alias la='ls -Ga'
+alias lla='ls -Gla'
 alias lsa='ls -Ga'
 
 # Because I'm tired of typing `brew switch`.
@@ -44,23 +45,11 @@ alias reload='source ~/.bash_profile'
 # vi should point to vim
 alias vi='vim'
 
-# Newer version of vim in MacVim distribution
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  alias vim=/Applications/MacVim.app/Contents/MacOS/Vim 
-fi
-
-# Enhanced git for the win.
-alias git=hub
-
 # Because I misspell often...
 alias gti='git'
 
 # Alias for Tcl shell-like interpreter
 alias tcl='tclsh'
-
-# Redis server and client
-alias redis_server="$HOME/Library/redis/src/redis-server"
-alias redis="$HOME/Library/redis/src/redis-cli"
 
 # Keep from clobbering directories
 alias mkdir='mkdir -p'
