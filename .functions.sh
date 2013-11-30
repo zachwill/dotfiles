@@ -12,11 +12,6 @@ activate() {
   fi
 }
 
-# Easy switching between DotCloud config files.
-dotcloud_config() {
-  export DOTCLOUD_CONFIG_FILE="$HOME/.dotcloud/$1.conf"
-}
-
 extract() {
   if [ -f $1 ] ; then
     case $1 in
@@ -43,12 +38,6 @@ mcd() {
   mkdir -p "$1" && cd "$1";
 }
 
-# Taken from alias.sh
-# http://alias.sh/reconnect-or-start-tmux-or-screen-session-over-ssh
-sssh() {
-  ssh -t "$1" 'tmux attach || tmux new || screen -DR';
-}
-
 # For Xcode workspaces.
 work() {
   xcode=$(ls | grep ".*xcworkspace" || ls | grep ".*xcodeproj")
@@ -59,6 +48,8 @@ apps() {
   cd "$HOME/Music/iTunes/iTunes Media/Mobile Applications"
 }
 
-todo() {
-  touch ~/Dropbox/Todo/"$(echo $@)"
+# Taken from alias.sh
+# http://alias.sh/reconnect-or-start-tmux-or-screen-session-over-ssh
+sssh() {
+  ssh -t "$1" 'tmux attach || tmux new || screen -DR';
 }

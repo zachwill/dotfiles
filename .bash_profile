@@ -2,8 +2,6 @@
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Add local bin to PATH
   PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
-  # Postgres.app
-  PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
   # Python scripts
   PATH="${PATH}:/usr/local/share/python"
 fi
@@ -16,8 +14,6 @@ set -o vi
 
 # Set default editor to vim.
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-else
   export EDITOR=vim
 fi
 
