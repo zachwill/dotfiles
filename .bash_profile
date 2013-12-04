@@ -1,7 +1,7 @@
 # Mac OS X specific things
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Add local bin to PATH
-  PATH="/usr/local/sbin:/usr/local/bin:${PATH}"
+  PATH="/usr/local/bin:${PATH}"
   # Python scripts
   PATH="${PATH}:/usr/local/share/python"
 fi
@@ -45,7 +45,6 @@ export NODE_PATH="/usr/local/lib/node_modules"
 if [ -f ~/.git_completion.sh ]; then
   source ~/.git_completion.sh
 fi
-
 
 function parse_git_branch {
   local prompt=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
