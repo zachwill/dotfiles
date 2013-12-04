@@ -53,3 +53,7 @@ apps() {
 sssh() {
   ssh -t "$1" 'tmux attach || tmux new || screen -DR';
 }
+
+title() {
+  echo -e "\033k$@\033\\"
+}
