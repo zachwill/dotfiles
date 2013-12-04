@@ -26,6 +26,7 @@
   co = checkout
   df = diff
   ui = update-index
+  amend = commit --amend
   unchange = update-index --assume-unchanged
   change = update-index --no-assume-unchanged
   dc = diff --cached
