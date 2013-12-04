@@ -83,7 +83,7 @@ set softtabstop=2
 " Temporary files
 set nobackup
 set nowritebackup
-set dir=/tmp
+set directory=/tmp
 
 " Mouse functionality
 if has("mouse")
@@ -124,7 +124,7 @@ au FileType python setl shiftwidth=4
 au FileType python setl softtabstop=4
 
 " PHP
-" au FileType php setl sts=4 sw=4
+"au FileType php setl sts=4 sw=4
 "au FileType php setl noexpandtab
 
 " Makefiles
@@ -205,6 +205,8 @@ function! RunCommand()
       let lang = "node"
     elseif lang == "go"
       let lang = "go run"
+    elseif lang == "text"
+      let lang = "cat"
     endif
     exe "map <leader>r :w<CR>:!" . lang . " %<CR>"
   endif
