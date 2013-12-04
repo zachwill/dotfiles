@@ -7,3 +7,8 @@ fi
 if [ -f ~/.aliases.sh ]; then
   source ~/.aliases.sh
 fi
+
+# Add RVM to PATH for scripting
+if [ -f ~/.rvm ]; then
+  PATH="$PATH:$HOME/.rvm/bin"
+fi
