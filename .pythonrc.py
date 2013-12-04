@@ -117,17 +117,8 @@ sys.displayhook = my_displayhook
 #################
 
 WELCOME = """
-%(Red)s
-You've got color, history, and pretty printing.
-(If your ~/.inputrc doesn't suck, you've also
-got completion and vi-mode keybindings.)
-%(Purple)s
 Type \e to get an external editor.
-%(Normal)s""" % _c
-
-atexit.register(lambda: sys.stdout.write("""%(DarkGray)s
-And that was that.\n
-%(Normal)s""" % _c))
+""" % _c
 
 # Django Helpers
 ################
@@ -173,7 +164,6 @@ Warning: DEBUG_PROPAGATE_EXCEPTIONS has been set to True.
 ##################################     
 # http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/438813/
 
-MAC_VIM = '/Applications/MacVim.app/Contents/MacOS/Vim'
 EDITOR = os.environ.get('EDITOR', 'vim')
 EDIT_CMD = '\e'
 
@@ -192,9 +182,7 @@ class EditableBufferInteractiveConsole(InteractiveConsole):
             fd, tmpfl = mkstemp('.py')
             os.write(fd, b'\n'.join(self.last_buffer))
             os.close(fd)
-            # I use MacVim's updated vim, but you can also use
-            # EDITOR in the first variable of the line below.
-            os.system('%s %s' % (MAC_VIM, tmpfl))
+            os.system('%s %s' % (EDITOR, tmpfl))
             line = open(tmpfl).read()
             os.unlink(tmpfl)
             tmpfl = ''
