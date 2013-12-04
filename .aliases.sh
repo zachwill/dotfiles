@@ -65,9 +65,6 @@ alias ss='screen -S'
 alias sr='screen -r'
 alias sls='screen -ls'
 
-# VLC
-alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
-
 # Kill a specific screen
 sk(){
   if [ "$1" != "" ]; then
@@ -76,8 +73,8 @@ sk(){
   fi
 }
 
-# Alias to Python library
-alias python_lib='cd /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/'
+# VLC
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
-# For Memcache
-EVENT_NOKQUEUE=1
+# MAMP
+alias mamp='/Applications/MAMP/Library/bin/mysql'
