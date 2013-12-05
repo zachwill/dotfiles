@@ -78,3 +78,6 @@ alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
 # MAMP
 alias mamp='/Applications/MAMP/Library/bin/mysql'
+
+# Vundle BundleInstall from the CLI
+alias vundle='vim +BundleInstall +qall'
