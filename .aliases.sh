@@ -29,6 +29,7 @@ alias gph='git push heroku'
 alias ls='ls -G'
 alias ll='ls -Gl'
 alias la='ls -Ga'
+alias lh='ls -Glh'
 alias lla='ls -Gla'
 alias lsa='ls -Ga'
 
@@ -81,3 +82,6 @@ alias mamp='/Applications/MAMP/Library/bin/mysql'
 
 # Vundle BundleInstall from the CLI
 alias vundle='vim +BundleInstall +qall'
+
+# Homebrew SQLite
+alias sqlite='/usr/local/opt/sqlite/bin/sqlite3'
