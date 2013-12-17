@@ -21,13 +21,22 @@ from code import InteractiveConsole
 
 # Imports we want
 import datetime
+import json
 import pdb
 import re
-import json
+import sqlite3
 from timeit import Timer
 
 try:
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
+except ImportError:
+    pass
+
+try:
     from urllib2 import urlopen
+    import requests as req
 except ImportError:  # pragma: no cover
     # For Python 3.
     from urllib.request import urlopen
