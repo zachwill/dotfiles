@@ -14,7 +14,6 @@ Bundle 'gmarik/vundle'
 " Plugins
 Bundle 'edsono/vim-matchit'
 Bundle 'ervandew/supertab'
-Bundle 'eraserhd/vim-ios'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'kevinw/pyflakes-vim'
@@ -41,6 +40,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 " Vim scripts
 Bundle 'Align'
+Bundle 'VimClojure'
 " ------------
 
 " Automagically source .vimrc
@@ -184,7 +184,7 @@ vmap <leader>s :s//g<LEFT><LEFT>
 " CTRL-P fuzzyfinder
 nmap ; :CtrlP<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*/Library/*,*/env/*
-set wildignore+=json/*,html/*
+set wildignore+=*/json/*,*/html/*
 
 " Invert comment on the current line/selection
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
@@ -243,7 +243,7 @@ nmap <C-L> :call <SID>SynStack()<CR>
 " SQL statements in PHP should be highlighted
 let php_sql_query=1
 " HTML code in PHP should be highlighted
-let php_htmlInStrings=1
+" let php_htmlInStrings=1
 
 " MiniBufExpl plugin settings
 let g:miniBufExplVSplit = 25
@@ -251,7 +251,7 @@ let g:miniBufExplorerMoreThanOne = 100
 let g:miniBufExplUseSingleClick = 1
 
 " ,b to display current buffers list
-nmap <Leader>b :MiniBufExplorer<cr>
+nmap <C-B> :MBEToggle<cr>
 
 " Open browser after posting a gist
 let g:gist_open_browser_after_post = 1
