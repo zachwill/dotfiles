@@ -18,7 +18,6 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'Raimondi/delimitMate'
@@ -40,7 +39,6 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 " Vim scripts
 Bundle 'Align'
-Bundle 'VimClojure'
 " ------------
 
 " Automagically source .vimrc
@@ -65,6 +63,7 @@ set smartcase
 " Line numbers
 set number
 set ruler
+set visualbell
 
 " Backspace
 set backspace=indent,eol,start
@@ -91,6 +90,10 @@ if has("mouse")
   set mousefocus
   set mousehide
 endif
+
+" Highlight the status bar when in insert mode
+au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
+au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
 
 " Scroll faster
 set ttyfast
@@ -167,9 +170,6 @@ nmap gO O<Esc>
 
 " Shortcut for =>
 imap <C-l> =><Space>
-
-" Use space to jump by pages
-nnoremap <Space> <PageDown>
 
 " Enter to switch buffers
 nmap <Enter> <C-^>
@@ -251,7 +251,7 @@ let g:miniBufExplorerMoreThanOne = 100
 let g:miniBufExplUseSingleClick = 1
 
 " ,b to display current buffers list
-nmap <C-B> :MBEToggle<cr>
+nnoremap <leader>b :MBEToggle<cr>
 
 " Open browser after posting a gist
 let g:gist_open_browser_after_post = 1
