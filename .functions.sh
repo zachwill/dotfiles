@@ -57,3 +57,7 @@ sssh() {
 title() {
   echo -e "\033k$@\033\\"
 }
+
+count() {
+  ls -l "$1" | wc -l
+}
