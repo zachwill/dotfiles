@@ -38,3 +38,7 @@
   oh = !git push origin && git push heroku
 [github]
   user = zachwill
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f

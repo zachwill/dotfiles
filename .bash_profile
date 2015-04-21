@@ -1,9 +1,7 @@
 # Mac OS X specific things
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Add local bin to PATH
-  PATH="/usr/local/bin:${PATH}"
-  # Python scripts
-  PATH="${PATH}:/usr/local/share/python"
+  PATH="/usr/local/bin:/usr/local/lib/go/bin:${PATH}"
 fi
 
 # Export the PATH
@@ -23,6 +21,9 @@ export PYTHONSTARTUP=$HOME/.pythonrc.py
 # Node modules
 export NODE_PATH="/usr/local/lib/node_modules"
 
+# Go modules
+export GOPATH="/usr/local/lib/go"
+
 # Source .aliases.sh file
 [[ -s "$HOME/.aliases.sh" ]] && . "$HOME/.aliases.sh"
 
@@ -39,7 +40,7 @@ export NODE_PATH="/usr/local/lib/node_modules"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Autojump
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.bash
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # The following is for a green git prompt of the current branch.
 if [ -f ~/.git_completion.sh ]; then

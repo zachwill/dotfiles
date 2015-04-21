@@ -3,6 +3,7 @@
 
 # Secret secrets
 .secrets.sh
+.__vimrc
 
 # Adobe Files
 *.psd

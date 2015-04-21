@@ -85,3 +85,4 @@ alias vundle='vim +BundleInstall +qall'
 
 # Homebrew SQLite
 alias sqlite='/usr/local/opt/sqlite/bin/sqlite3'
+alias gfortran='gfortran-4.2'

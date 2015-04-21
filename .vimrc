@@ -4,7 +4,6 @@ let mapleader=","
 
 " Filetype stuff for Vundle
 filetype off
-filetype plugin indent on
 
 " Vundle package manager
 set rtp+=~/.vim/bundle/vundle
@@ -20,12 +19,13 @@ Bundle 'kevinw/pyflakes-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+Bundle 'mikewest/vimroom'
 Bundle 'Raimondi/delimitMate'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
-Bundle 'tomtom/tlib_vim'
+" Bundle 'tomtom/tlib_vim'
 " Syntax
 Bundle 'groenewege/vim-less'
 Bundle 'jnwhiteh/vim-golang'
@@ -33,13 +33,18 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-markdown'
+Bundle 'vim-pandoc/vim-pandoc'
 " Snippets
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 " Vim scripts
 Bundle 'Align'
+Bundle 'mxw/vim-jsx'
 " ------------
+
+" Turn on after Vundle
+filetype plugin indent on
 
 " Automagically source .vimrc
 augroup VimReload
@@ -190,8 +195,13 @@ set wildignore+=*/json/*,*/html/*
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
 vmap <leader>/ :call NERDComment(0, "invert")<cr>
 
-" Edit a file
-" nmap e :n<Space>
+" Because Sparkup has some deficiencies...
+augroup sparkup_types
+  " Remove ALL autocommands of the current group.
+  autocmd!
+  " Add sparkup to new filetypes
+  autocmd FileType mustache,php,htmldjango,javascript runtime! ftplugin/html/sparkup.vim
+augroup END
 
 " Execute the current buffer
 function! RunCommand()
@@ -258,3 +268,11 @@ let g:gist_open_browser_after_post = 1
 
 " Easymotion
 let g:EasyMotion_leader_key = '<Leader>'
+
+" React and JSX
+let g:jsx_ext_required = 0
+
+" Project-specific .vimrc files
+if filereadable(".__vimrc")
+  source .__vimrc
+endif
