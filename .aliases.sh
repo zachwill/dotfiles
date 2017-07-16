@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 256 color support
+export TERM="xterm-256color"
+
 alias star='starcluster'
 
 # Use .json_tool.py to print JSON input
@@ -74,6 +77,9 @@ sk(){
   fi
 }
 
+# tmuxinator ruby gem
+alias mux='tmuxinator'
+
 # VLC
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
@@ -86,3 +92,8 @@ alias vundle='vim +BundleInstall +qall'
 # Homebrew SQLite
 alias sqlite='/usr/local/opt/sqlite/bin/sqlite3'
 alias gfortran='gfortran-4.2'
+export PGDATA='/usr/local/var/postgres'
+
+# Matplotlib
+export MPLBACKEND='module://itermplot'
+export ITERMPLOT='rv'

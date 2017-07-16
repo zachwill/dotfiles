@@ -7,33 +7,34 @@ filetype off
 
 " Vundle package manager
 set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+call vundle#begin()
 " ------------
 Bundle 'gmarik/vundle'
 " Plugins
-Bundle 'edsono/vim-matchit'
-Bundle 'ervandew/supertab'
+Bundle 'ajh17/VimCompletesMe'
 Bundle 'fholgado/minibufexpl.vim'
+Bundle 'geoffharcourt/vim-matchit'
 Bundle 'guns/xterm-color-table.vim'
-Bundle 'kevinw/pyflakes-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mikewest/vimroom'
+Bundle 'pdurbin/vim-tsv'
 Bundle 'Raimondi/delimitMate'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'rstacruz/sparkup', {'rtp': '.vim/'}
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-" Bundle 'tomtom/tlib_vim'
+" Bundle 'Valloric/YouCompleteMe'
 " Syntax
 Bundle 'groenewege/vim-less'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'juvenn/mustache.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-markdown'
-Bundle 'vim-pandoc/vim-pandoc'
+Plugin 'godlygeek/tabular'
 " Snippets
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
@@ -42,6 +43,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'Align'
 Bundle 'mxw/vim-jsx'
 " ------------
+call vundle#end()
 
 " Turn on after Vundle
 filetype plugin indent on
@@ -54,6 +56,7 @@ augroup END
 
 " 256 Colors
 set t_Co=256
+set background=dark
 
 " Color scheme
 color monokai
@@ -84,13 +87,14 @@ set textwidth=80
 set shiftwidth=2
 set softtabstop=2
 
-" Temporary files
+" No more temporary files
 set nobackup
 set nowritebackup
+set noswapfile
 set directory=/tmp
 
 " Mouse functionality
-if has("mouse")
+if has('mouse')
   set mouse=a
   set mousefocus
   set mousehide
@@ -112,6 +116,9 @@ au BufRead,BufNewFile *.podspec,Podfile set ft=ruby
 " CoffeeScript
 au BufNewFile,BufRead *.coffee set ft=coffee
 
+" CSV
+au BufNewFile,BufRead *.csv,*.tsv,*.txt set tw=0 noet sts=0
+
 " Go
 au BufRead,BufNewFile *.go set ft=go
 
@@ -122,7 +129,7 @@ au BufNewFile,BufRead *.json set ai filetype=javascript
 au BufNewFile,BufRead *.less set filetype=less
 
 " Markdown files
-au BufRead,BufNewFile *.md set filetype=markdown
+au BufNewFile,BufRead,BufReadPost *.md set filetype=markdown
 
 " Mustache and Handlebars
 au BufNewFile,BufRead *.mustache,*.handlebars,*.hbs set filetype=mustache
@@ -156,14 +163,19 @@ ca qa1 qa!
 ca W w
 ca Wq wq
 ca Wqa wqa
+ca WQa wqa
+
+" Avoid unnecessary hit-enter prompts
+set shortmess=atI
 
 " gm to go to the middle of a line
 map gm :call cursor(0, virtcol('$')/2)<CR>
 
 " Splits
 set splitright
-map vv :vsplit<CR>
-map ss :split<CR>
+" Use | and _ to split windows (while preserving original behaviour of [count]bar and [count]_).
+nnoremap <expr><silent> <Bar> v:count == 0 ? "<C-W>v<C-W><Right>" : ":<C-U>normal! 0".v:count."<Bar><CR>"
+nnoremap <expr><silent> _     v:count == 0 ? "<C-W>s<C-W><Down>"  : ":<C-U>normal! ".v:count."_<CR>"
 
 " Easy wrap toggling
 nmap <leader>w :set wrap!<cr>
@@ -172,6 +184,20 @@ nmap <leader>W :set nowrap<cr>
 " Insert blank lines without going into insert mode
 nmap go o<Esc>
 nmap gO O<Esc>
+
+" Quickly select the text that was just pasted. This allows you to, e.g.,
+" indent it after pasting.
+noremap gV `[v`]
+
+" Stay in visual mode when indenting. You will never have to run gv after
+" performing an indentation.
+vnoremap < <gv
+vnoremap > >gv
+
+" Make Y yank everything from the cursor to the end of the line. This makes Y
+" act more like C or D because by default, Y yanks the current line (i.e. the
+" same as yy).
+noremap Y y$
 
 " Shortcut for =>
 imap <C-l> =><Space>
@@ -252,6 +278,7 @@ nmap <C-L> :call <SID>SynStack()<CR>
 
 " SQL statements in PHP should be highlighted
 let php_sql_query=1
+let g:sql_type_default = 'mysql'
 " HTML code in PHP should be highlighted
 " let php_htmlInStrings=1
 
@@ -271,6 +298,18 @@ let g:EasyMotion_leader_key = '<Leader>'
 
 " React and JSX
 let g:jsx_ext_required = 0
+
+" PEP8 and Syntastic options
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = '--ignore=E501,E225'
+
+" Markdown folding
+let g:vim_markdown_folding_disabled=1
+
+" I like using <Enter> with YouCompleteMe
+" let g:ycm_key_list_select_completion = ['<Tab>', '<Down>', '<Enter>']
+" Another workaround for the flow I'm used to.
+" inoremap <expr> <Enter> pumvisible() ? '\<C-y> ' : '<Enter>'
 
 " Project-specific .vimrc files
 if filereadable(".__vimrc")
